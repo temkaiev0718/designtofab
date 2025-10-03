@@ -1,0 +1,58 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "show_title": true,
+        "page_width": "xs"
+      }
+    },
+    "rich_text_nFLyGG": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_78gmRT": {
+          "type": "heading",
+          "settings": {
+            "text": "<strong>Customer Enquiry Form<\/strong>",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext_e8jjNY": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>If you have seen something on our website that has sparked your interest and you have a creative idea you want to bring to life, submit an enquiry form or email us directly to start the design conversation. Our lead times do vary depending on current projects and laser cutting production times. <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_78gmRT",
+        "richtext_e8jjNY"
+      ],
+      "name": "t:sections.rich_text.presets.rich_text.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": false,
+        "content_width": "sm",
+        "text_position": "center",
+        "remove_vertical_spacing": false
+      }
+    },
+    "contact-form": {
+      "type": "contact",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": false,
+        "subheading": "",
+        "title": "",
+        "content": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_nFLyGG",
+    "contact-form"
+  ]
+}

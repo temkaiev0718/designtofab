@@ -1,0 +1,61 @@
+{
+  "sections": {
+    "rich_text_mB38xd": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_MXLFCb": {
+          "type": "subheading",
+          "settings": {
+            "text": "Subheading"
+          }
+        },
+        "heading_6TV4iV": {
+          "type": "heading",
+          "settings": {
+            "text": "Heading",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext_wqniBj": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p><strong>Custom Projects Gallery<\/strong><\/p><p>This gallery showcases the breadth of our design and<br\/>manufacturing capabilities, from intricate, personal custom commissions to<br\/>large-scale community and commercial collaborations requiring both <strong>artistic<br\/>finesse<\/strong> and <strong>structural integrity<\/strong>. Every project reflects our<br\/>commitment to artistic vision, quality craftsmanship, and unique client<br\/>fulfillment.<\/p><p><strong>Trophies & Awards<\/strong><\/p><p><strong>Designing and manufacturing distinctive, high-quality<br\/>  awards that move beyond standard store-bought pieces, adding prestige to any<br\/>  event or recognition program.<\/strong><\/p><p><strong>Light Towers & Sculptural Features<\/strong><\/p><p><strong>Small and large-scale, durable installations created<br\/>  for public spaces, residential and commercial properties, designed to be<br\/>  visually impactful and resilient to the elements.<\/strong><\/p><p><strong>Memorials & Plaques<\/strong><\/p><p><strong>Creating lasting, dignified tributes &<br\/>  commemorative pieces, that honor individuals, pets or events, blending custom<br\/>  design with timeless quality.<\/strong><\/p><p><strong>Custom Signs & Property Signage<\/strong><\/p><p><strong>Highly visible, bespoke and custom signage for<br\/>  businesses, properties, and farms, ensuring a unique aesthetic and<br\/>  professional presentation.<\/strong><\/p><p><strong>Event Lanyards & Accessories<\/strong><\/p><p><strong>Providing custom, branded metal accessories and<br\/>  hardware for large events, ensuring a professional look and durable quality<br\/>  for event branding and logistics.<\/strong><\/p><p><strong>We Bring Your Vision to Life<\/strong><\/p><p>Do you have a unique vision for a project, need a signature<br\/>piece for your property, or require custom metal goods for an upcoming event?<br\/>Our team combines artistic talent with manufacturing expertise to deliver<br\/>exceptional results.<\/p><p>Images to include?<\/p><p>Seasons bag – gifts<\/p><p>Piallamore Recreation Ground - screens<\/p><p>Aust Dressage Showcase 2023 <br\/>- 2025 – Trophy wall art<\/p><p>Dungowan Brewery – Lanyard animals<\/p><p>Walhallow Public School - pond cover<\/p><p>Preston Miners Tribute – large light tower – pics on<br\/>facebook<\/p><p>Indigiearth - screens (fire drum 10\/5\/22 facebook)<\/p><p>Trelawney Station – signage - Lynde 2019 pics on facebook <\/p><p>Springsure Mountain Challenge, Brain Foundation, Currabubula<br\/>– donations\/support<\/p><p> <\/p><p>Fabricated seat – Stephs Grooming and retreat, Scotts coat<br\/>of arms <\/p><p>RHC - Retirement gift for stockwhip framing<\/p><p>Custom items - Well cover wrens, Light tower Oaklands, Fire<br\/>pits – indigiearth, signs – Warrah Ridge, Longview, Hidden Pines <\/p><p>Memorial pieces – dogs, crosses (initial -Drewie)<\/p><p><strong> <\/strong><\/p><p><strong>Before\/After?<\/strong><\/p><p>Warrah Ridge<\/p><p>Rymad<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_MXLFCb",
+        "heading_6TV4iV",
+        "richtext_wqniBj"
+      ],
+      "name": "t:sections.rich_text.presets.rich_text.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "content_width": "sm",
+        "text_position": "center",
+        "remove_vertical_spacing": false
+      }
+    },
+    "main": {
+      "type": "main-blog",
+      "settings": {
+        "color_scheme": "",
+        "show_blog_title": true,
+        "show_rss_feed": false,
+        "show_tags": true,
+        "posts_per_page": 10,
+        "feature_first_blog_post": true,
+        "featured_blog_post_color_scheme": "",
+        "show_category": true,
+        "show_date": false,
+        "show_excerpt": true,
+        "show_read_more": true
+      }
+    }
+  },
+  "order": [
+    "rich_text_mB38xd",
+    "main"
+  ]
+}

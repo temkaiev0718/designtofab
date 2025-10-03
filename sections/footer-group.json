@@ -1,0 +1,133 @@
+{
+  "type": "footer",
+  "name": "Footer group",
+  "sections": {
+    "text-with-icons": {
+      "type": "text-with-icons",
+      "blocks": {
+        "icon-1": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-award-gift",
+            "icon_width": 32,
+            "mobile_icon_width": 24,
+            "title": "Free delivery worldwide",
+            "content": "<p>Short content about your store<\/p>"
+          }
+        },
+        "icon-2": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-award-gift",
+            "icon_width": 32,
+            "mobile_icon_width": 24,
+            "title": "Satisfied or refunded",
+            "content": "<p>Short content about your store<\/p>"
+          }
+        },
+        "icon-3": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-award-gift",
+            "icon_width": 32,
+            "mobile_icon_width": 24,
+            "title": "Top-notch support",
+            "content": "<p>Short content about your store<\/p>"
+          }
+        },
+        "icon-4": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-award-gift",
+            "icon_width": 32,
+            "mobile_icon_width": 24,
+            "title": "Secure payments",
+            "content": "<p>Short content about your store<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "icon-1",
+        "icon-2",
+        "icon-3",
+        "icon-4"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-9362f68e-7e7e-4a23-ac40-a5d1adbe3f38",
+        "separate_section_with_border": false,
+        "stack_on_mobile": false,
+        "icon_color": "",
+        "text_color": "",
+        "text_alignment": "center"
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "image_bK3cqT": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/WHITE_f92cef3a-c433-44ab-9f3b-5c9fd27689ce.png",
+            "image_width": 240,
+            "link": ""
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "title": "Design to Fab",
+            "content": "<h5>Inspired by nature. Forged by hand.<\/h5><p>We create rustic metal art pieces that bring warmth, texture and storytelling into your home and garden. Each design is laser cut and hand finished in regional NSW – crafted to last, designed to connect.<\/p>",
+            "enable_follow_on_shop": true
+          }
+        },
+        "links": {
+          "type": "links",
+          "settings": {
+            "menu": "main-menu-2025",
+            "show_menu_title": true,
+            "menu_title": "Menu"
+          }
+        },
+        "links_GQNcgE": {
+          "type": "links",
+          "settings": {
+            "menu": "main-menu-2025",
+            "show_menu_title": true,
+            "menu_title": "Info"
+          }
+        },
+        "newsletter": {
+          "type": "newsletter",
+          "settings": {
+            "title": "Stay in Touch",
+            "content": "<p>Join our mailing list for exclusive offers, product releases and behind-the-scenes from the workshop.<\/p>",
+            "button_background": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_bK3cqT",
+        "text",
+        "links",
+        "links_GQNcgE",
+        "newsletter"
+      ],
+      "settings": {
+        "color_scheme": "scheme-090efca9-322e-46ea-95a9-3aed0f0e4100",
+        "separate_section_with_border": false,
+        "show_social_media": true,
+        "show_payment_icons": true,
+        "show_country_selector": true,
+        "show_country_name": true,
+        "show_country_flag": true,
+        "show_locale_selector": true
+      }
+    }
+  },
+  "order": [
+    "text-with-icons",
+    "footer"
+  ]
+}

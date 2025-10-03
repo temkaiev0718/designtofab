@@ -1,0 +1,120 @@
+{
+  "type": "header",
+  "name": "Header group",
+  "sections": {
+    "announcement_bar_WQ3Q6J": {
+      "type": "announcement-bar",
+      "blocks": {
+        "message_GQVDtf": {
+          "type": "message",
+          "settings": {
+            "text": "Handcrafted Elegance, Made for Your Home"
+          }
+        }
+      },
+      "block_order": [
+        "message_GQVDtf"
+      ],
+      "custom_css": [
+        ".announcement-bar {height: 32px; font-size: 12px; display: flex; align-items: center; justify-content: center;}",
+        ".heading {position: relative; z-index: 1; font-weight: normal; line-height: 1; text-align: center;}"
+      ],
+      "name": "t:sections.announcement_bar.name",
+      "settings": {
+        "color_scheme": "scheme-a17efe13-92bf-47b6-8957-f804014f2bd7",
+        "enable_sticky": false,
+        "autoplay": true,
+        "cycle_speed": 5,
+        "desktop_font_size": 11,
+        "mobile_font_size": 10
+      }
+    },
+    "countdown-timer": {
+      "type": "countdown-condensed",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "schema-3",
+        "content": "super Sale Up to 40% off",
+        "link_text": "shop now",
+        "link_url": "shopify:\/\/collections\/all",
+        "expiration_date": "2025-11-25",
+        "expiration_behavior": "leave",
+        "desktop_justification": "space-between"
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "mega_menu_BK4MXC": {
+          "type": "mega_menu",
+          "settings": {
+            "menu_item": "Shop",
+            "images_position": "right",
+            "image_1_heading": "",
+            "image_1_text": "",
+            "image_1_link": "",
+            "image_2_heading": "",
+            "image_2_text": "",
+            "image_2_link": ""
+          }
+        },
+        "mega_menu_z9xGeB": {
+          "type": "mega_menu",
+          "settings": {
+            "menu_item": "About",
+            "images_position": "right",
+            "image_1_heading": "",
+            "image_1_text": "",
+            "image_1_link": "",
+            "image_2_heading": "",
+            "image_2_text": "",
+            "image_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "mega_menu_BK4MXC",
+        "mega_menu_z9xGeB"
+      ],
+      "custom_css": [
+        ".header {z-index: 103;}",
+        ".container {--container-max-width: 100%; --container-gutter: 40px;}",
+        ".mega-menu__promo {column-gap: 2px; overflow: hidden;}",
+        ".mega-menu__promo .group {position: relative;}",
+        ".mega-menu__promo .group > .v-stack {position: absolute; inset: 0; padding: 1.5rem; height: 100%; width: 100%; text-align: left; display: flex; flex-direction: column; justify-content: space-between;}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-9362f68e-7e7e-4a23-ac40-a5d1adbe3f38",
+        "enable_sticky": true,
+        "hide_on_scroll": false,
+        "show_separation_border": false,
+        "reduce_padding": false,
+        "logo": "shopify:\/\/shop_images\/BLACK.png",
+        "logo_max_width": 230,
+        "logo_mobile_max_width": 175,
+        "menu": "main-menu-2025",
+        "sidebar_menu": "",
+        "menu_open_trigger": "hover",
+        "menu_text_font": "heading",
+        "enable_search": true,
+        "sidebar_color_scheme": "schema-2",
+        "sidebar_text_font": "heading",
+        "sidebar_show_dividers": false,
+        "sidebar_open_second_level_menus": false,
+        "layout": "logo_center_navigation_inline",
+        "show_icons": true,
+        "show_country_selector": false,
+        "show_country_name": false,
+        "show_country_flag": true,
+        "show_locale_selector": false,
+        "transparent_header_text_color": "#ffffff",
+        "transparent_logo": "shopify:\/\/shop_images\/WHITE_f92cef3a-c433-44ab-9f3b-5c9fd27689ce.png"
+      }
+    }
+  },
+  "order": [
+    "announcement_bar_WQ3Q6J",
+    "countdown-timer",
+    "header"
+  ]
+}
