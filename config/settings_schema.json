@@ -324,6 +324,29 @@
       },
       {
         "type": "header",
+        "content": "Custom Font"
+      },
+      {
+        "type": "textarea",
+        "id": "custom_font_css",
+        "label": "Custom Font CSS",
+        "placeholder": "Paste the CSS for your custom font here. This should include the @font-face rule and any other necessary styles. Make sure to include the font-family name that matches the one specified above.",
+        "info": "@font-face {\n  font-family: 'CustomFont';\n  src: url('https:\/\/example.com\/path\/to\/font.woff2') format('woff2');\n  font-weight: normal;\n  font-style: normal;\n}}"
+      },
+      {
+        "type": "text",
+        "id": "custom_heading_font_name",
+        "label": "Headings - Custom Font Name",
+        "info": "Must use the same font name as defined above. Leave blank to use theme fonts."
+      },
+      {
+        "type": "text",
+        "id": "custom_body_font_name",
+        "label": "Body - Custom Font Name",
+        "info": "Must use the same font name as defined above. Leave blank to use theme fonts."
+      },
+      {
+        "type": "header",
         "content": "t:theme_settings.typography.button_category"
       },
       {
@@ -827,6 +850,23 @@
         "id": "favicon",
         "label": "t:theme_settings.favicon.image",
         "info": "t:theme_settings.favicon.image_info"
+      }
+    ]
+  },
+  {
+    "name": "Custom Code (DAC)",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_back_to_top",
+        "label": "Enable Back to Top Button",
+        "default": true
+      },
+      {
+        "type": "color",
+        "id": "link_hover_color",
+        "label": "Links Hover Color",
+        "default": "#4b5df8"
       }
     ]
   }

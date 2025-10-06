@@ -1,0 +1,64 @@
+<p>
+  {% if product.metafields.custom.material %}
+    {{ product.metafields.custom.material }}<br>
+  {% endif %}
+  {% comment %}
+    First, build a list of unique sizes from the first option of each variant.
+  {% endcomment %}
+  {% assign unique_sizes = "" %}
+  {% for variant in product.variants %}
+    {% assign size = variant.options[0] %}
+    {% unless unique_sizes contains size %}
+      {% assign unique_sizes = unique_sizes | append: size | append: "||" %}
+    {% endunless %}
+  {% endfor %}
+  {% assign unique_sizes_array = unique_sizes | split: "||" %}
+
+  {% if context == 'dac-collage' %}
+    {% for size in unique_sizes_array %}
+      {% assign variant = product.variants | where: 'option1', size | first %}
+      {% if size != "" %}
+        {{ size | split: '(' | last | replace: ')', '' }}
+        {{ size | split: '/' | first }}
+        <span class="variant-dot {% if variant.available == false %}soldout{% endif %}">•</span>
+        <br>
+      {% endif %}
+    {% endfor %}
+  {% else %}
+    {% for size in unique_sizes_array %}
+      {% assign variant = product.variants | where: 'option1', size | first %}
+      {% if size != "" %}
+        {{ size }}
+        {% if variant.metafields.custom.edition != blank %}
+          Edition of {{ variant.metafields.custom.edition }} 
+        {% endif %}  
+        <span class="variant-dot {% if variant.available == false %}soldout{% endif %}">•</span>
+        <br>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+  {% if show_inscription and product.metafields.custom.inscription %}
+    Inscription: {{ product.metafields.custom.inscription }}<br>
+  {% endif %}
+  {% if show_series_info and product.metafields.custom.series %}
+    Series: {{ product.metafields.custom.series }}<br>
+    © Leila Jeffreys
+  {% endif %}
+  {% if show_series_info %}
+    {{ product.metafields.custom.year }}
+  {% endif %}
+</p>
+
+<style>
+  .variant-dot {
+    display: inline-block;
+    transform: scale(2.75) translate(1px, -0.5px);
+    color: #40df56;
+  }
+  .variant-dot.soldout {
+    color: #CD1217;
+  }
+  .dac-custom-description .variant-dot {
+    transform: scale(2.75) translate(1px, 0);
+  }
+</style>

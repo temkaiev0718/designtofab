@@ -7967,3 +7967,7 @@ ul {
   display: -webkit-box;
   overflow: hidden;
 }
+
+header.difference x-header {
+  background-color : transparent!important;
+}

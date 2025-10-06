@@ -1,0 +1,491 @@
+<!-- sections/partners-accordion.liquid -->
+
+{%- style -%}
+  .section-partners-accordion {
+    padding-top: {{ section.settings.section_padding_top }}px;
+    padding-bottom: {{ section.settings.section_padding_bottom }}px;
+  }
+  
+  .partners-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 4rem;
+  }
+  
+  .partners-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: {{ section.settings.title_color }};
+    margin-bottom: 2rem;
+    flex: 0 0 300px;
+  }
+  
+  .partners-list {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .partner-item {
+    border-bottom: 1px solid {{ section.settings.border_color }};
+    margin-bottom: 0;
+  }
+  
+  .partner-header {
+    padding: 1.5rem 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+  }
+  
+  .partner-header:hover {
+    color: {{ section.settings.hover_color }};
+  }
+  
+  .partner-name {
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin: 0;
+    color: {{ section.settings.partner_name_color }};
+    transition: color 0.3s ease;
+  }
+  
+  .partner-indicator {
+    width: 12px;
+    height: 12px;
+    border: 1px solid {{ section.settings.indicator_color }};
+    border-radius: 50%;
+    background: transparent;
+    transition: all 0.3s ease;
+    position: relative;
+    flex-shrink: 0;
+  }
+  
+  .partner-indicator.active {
+    background: {{ section.settings.indicator_active_color }};
+  }
+  
+  .partner-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    opacity: 0;
+  }
+  
+  .partner-content.active {
+    max-height: 800px;
+    opacity: 1;
+    padding-bottom: 2rem;
+  }
+  
+  .partner-details {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+  
+  .partner-image {
+    flex: 0 0 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .partner-info {
+    flex: 1;
+  }
+  
+  .partner-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: {{ section.settings.description_color }};
+    margin-bottom: 1.5rem;
+  }
+  
+  .partner-scope {
+    margin-bottom: 1.5rem;
+  }
+  
+  .partner-scope h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: {{ section.settings.scope_title_color }};
+  }
+  
+  .partner-services {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .partner-services li {
+    font-size: 0.9rem;
+    color: {{ section.settings.services_color }};
+    margin-bottom: 0.25rem;
+    padding-left: 1rem;
+    position: relative;
+  }
+  
+  .partner-services li:before {
+    content: '○';
+    position: absolute;
+    left: 0;
+    color: {{ section.settings.bullet_color }};
+  }
+  
+  .partner-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: {{ section.settings.link_color }};
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .partner-link:hover {
+    color: {{ section.settings.link_hover_color }};
+  }
+  
+  .partner-link svg {
+    width: 12px;
+    height: 12px;
+  }
+  
+  @media screen and (max-width: 1024px) {
+    .partners-container {
+      flex-direction: column;
+      gap: 2rem;
+    }
+    
+    .partners-title {
+      flex: none;
+      font-size: 2rem;
+    }
+    
+    .partner-details {
+      flex-direction: column;
+    }
+    
+    .partner-image {
+      flex: none;
+      width: 100%;
+      height: 250px;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .partner-details {
+      gap: 1rem;
+    }
+    
+    .partner-image {
+      height: 200px;
+    }
+    
+    .partners-title {
+      font-size: 1.8rem;
+    }
+  }
+{%- endstyle -%}
+
+<div class="section-partners-accordion">
+  <div class="page-width">
+    <div class="partners-container">
+      
+      <h2 class="partners-title">{{ section.settings.title | default: 'Selected Partners' }}</h2>
+      
+      <div class="partners-list">
+        {%- for block in section.blocks -%}
+          <div class="partner-item" data-partner="{{ forloop.index }}" {{ block.shopify_attributes }}>
+            
+            <div class="partner-header" onclick="togglePartner({{ forloop.index }})">
+              <h3 class="partner-name">{{ block.settings.partner_name }}</h3>
+              <div class="partner-indicator" id="indicator-{{ forloop.index }}"></div>
+            </div>
+            
+            <div class="partner-content" id="content-{{ forloop.index }}">
+              <div class="partner-details">
+                
+                {%- if block.settings.partner_image != blank -%}
+                  <img 
+                    class="partner-image" 
+                    src="{{ block.settings.partner_image | img_url: '600x400' }}"
+                    alt="{{ block.settings.partner_name | escape }}"
+                    loading="lazy"
+                  >
+                {%- endif -%}
+                
+                <div class="partner-info">
+                  {%- if block.settings.partner_description != blank -%}
+                    <div class="partner-description">
+                      {{ block.settings.partner_description }}
+                    </div>
+                  {%- endif -%}
+                  
+                  {%- assign services = block.settings.services | split: ',' -%}
+                  {%- if services.size > 0 and block.settings.services != blank -%}
+                    <div class="partner-scope">
+                      <h4>Scope</h4>
+                      <ul class="partner-services">
+                        {%- for service in services -%}
+                          <li>{{ service | strip }}</li>
+                        {%- endfor -%}
+                      </ul>
+                    </div>
+                  {%- endif -%}
+                  
+                  {%- if block.settings.case_study_url != blank -%}
+                    <a href="{{ block.settings.case_study_url }}" class="partner-link">
+                      {{ block.settings.link_text | default: 'Go to case study' }}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                      </svg>
+                    </a>
+                  {%- endif -%}
+                </div>
+                
+              </div>
+            </div>
+            
+          </div>
+        {%- endfor -%}
+        
+        {%- if section.blocks.size == 0 -%}
+          <div class="placeholder-content" style="text-align: center; padding: 2rem;">
+            <p>Add partner blocks to showcase your partnerships.</p>
+          </div>
+        {%- endif -%}
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<script>
+  function togglePartner(index) {
+    // Close all other partners
+    const allContents = document.querySelectorAll('.partner-content');
+    const allIndicators = document.querySelectorAll('.partner-indicator');
+    
+    allContents.forEach((content, i) => {
+      if (i + 1 !== index) {
+        content.classList.remove('active');
+        allIndicators[i].classList.remove('active');
+      }
+    });
+    
+    // Toggle the clicked partner
+    const content = document.getElementById('content-' + index);
+    const indicator = document.getElementById('indicator-' + index);
+    
+    if (content.classList.contains('active')) {
+      content.classList.remove('active');
+      indicator.classList.remove('active');
+    } else {
+      content.classList.add('active');
+      indicator.classList.add('active');
+    }
+  }
+  
+  // Optional: Auto-expand first partner
+  document.addEventListener('DOMContentLoaded', function() {
+    if ({{ section.settings.auto_expand_first | json }}) {
+      togglePartner(1);
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Partners Accordion",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Selected Partners"
+    },
+    {
+      "type": "checkbox",
+      "id": "auto_expand_first",
+      "label": "Auto-expand first partner",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "label": "Top Padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "label": "Bottom Padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "partner_name_color",
+      "label": "Partner Name Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "hover_color",
+      "label": "Hover Color",
+      "default": "#666666"
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description Color",
+      "default": "#555555"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border Color",
+      "default": "#e5e5e5"
+    },
+    {
+      "type": "color",
+      "id": "indicator_color",
+      "label": "Indicator Border",
+      "default": "#cccccc"
+    },
+    {
+      "type": "color",
+      "id": "indicator_active_color",
+      "label": "Active Indicator",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "scope_title_color",
+      "label": "Scope Title Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "services_color",
+      "label": "Services Text Color",
+      "default": "#555555"
+    },
+    {
+      "type": "color",
+      "id": "bullet_color",
+      "label": "Bullet Color",
+      "default": "#cccccc"
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "Link Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "link_hover_color",
+      "label": "Link Hover Color",
+      "default": "#666666"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "partner",
+      "name": "Partner",
+      "settings": [
+        {
+          "type": "text",
+          "id": "partner_name",
+          "label": "Partner Name",
+          "default": "Partner Name"
+        },
+        {
+          "type": "image_picker",
+          "id": "partner_image",
+          "label": "Partner Image"
+        },
+        {
+          "type": "richtext",
+          "id": "partner_description",
+          "label": "Partner Description",
+          "default": "<p>Add a detailed description of this partner and your collaboration with them.</p>"
+        },
+        {
+          "type": "textarea",
+          "id": "services",
+          "label": "Services (comma separated)",
+          "placeholder": "Digital Consulting, Facebook & Instagram Advertising, Google Advertising",
+          "info": "Separate each service with a comma"
+        },
+        {
+          "type": "url",
+          "id": "case_study_url",
+          "label": "Case Study URL"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link Text",
+          "default": "Go to case study"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Partners Accordion",
+      "blocks": [
+        {
+          "type": "partner",
+          "settings": {
+            "partner_name": "Alfred's Apartment"
+          }
+        },
+        {
+          "type": "partner",
+          "settings": {
+            "partner_name": "Barney Cools"
+          }
+        },
+        {
+          "type": "partner",
+          "settings": {
+            "partner_name": "I Love Ugly"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

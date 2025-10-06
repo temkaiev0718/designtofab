@@ -1,0 +1,45 @@
+{% if settings.enable_back_to_top %}
+  {% style %}
+    .btn--back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      cursor: pointer;
+    }
+    .btn--back-to-top:not(.active) {
+      display: none;
+    }
+  {% endstyle %}
+
+  <button-back-to-top data-action="backtotop" 
+    class="btn--back-to-top circle-button circle-button--lg hover:animate-icon-block">
+    {% render 'icon' with 'chevron-up' %}
+  </button-back-to-top>
+
+  <script>
+    const u_debounce = (fn, delay) => {
+      let timer;
+      return function(...args) {
+        clearTimeout(timer);
+        timer = setTimeout(() => fn.apply(this, args), delay);
+      };
+    }
+
+    if (!customElements.get('button-back-to-top')) {
+      customElements.define('button-back-to-top', class extends HTMLElement {
+        constructor() {
+          super();
+          this.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          });
+
+          document.addEventListener('scroll', u_debounce((e) => {
+            // console.log(e);
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
+            this.classList.toggle('active', scrollTop > 300);
+          }, 250));
+        }
+      });
+    }
+  </script>
+{% endif %}

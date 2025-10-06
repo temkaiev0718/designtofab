@@ -55,6 +55,8 @@
     {{ content_for_header }}
 
     {{- 'theme.css' | asset_url | stylesheet_tag: preload: true -}}
+    {% comment %} SV- {% endcomment %}
+    {{- '_custom.css' | asset_url | stylesheet_tag: preload: true -}}
   </head>
 
   {% liquid
@@ -98,6 +100,8 @@
       {%- if request.page_type != 'password' -%}
         {%- sections 'footer-group' -%}
       {%- endif -%}
+
+      {% render 'dac-back-to-top' %}
     </main>
   </body>
 </html>

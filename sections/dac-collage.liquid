@@ -1,0 +1,622 @@
+{% comment %}
+  Check if any content block uses a width other than 25% to decide on the mobile layout.
+{% endcomment %}
+<style>
+  {% liquid 
+    assign blocks_count = section.blocks.size 
+    assign blocks_calc = blocks_count | minus: 1
+    if blocks_count > 4
+      assign blocks_calc = blocks_count | minus: 2
+    endif
+  %}
+  #shopify-section-{{ section.id }} {
+    --section-vertical-spacing-override: {{ section.settings.title_vertical_spacing }}px;
+  }
+  
+  #shopify-section-{{ section.id }} .dac-custom-row {
+    --dac-custom-row-gap: {{- section.settings.gap_mobile -}}px;
+    --dac-custom-row-calculation: calc(var(--dac-custom-row-gap) * {{ blocks_calc }} / {{ blocks_count }});
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(var(--dac-custom-row-gap));
+    row-gap: 3rem; /* SV- */
+  }
+
+  /* Desktop (or larger screens) widths */
+  #shopify-section-{{ section.id }} .dac-custom-row .content-25,
+  #shopify-section-{{ section.id }} .dac-custom-row .empty-25 { width: calc(25% - var(--dac-custom-row-calculation)); }
+  #shopify-section-{{ section.id }} .dac-custom-row .content-33,
+  #shopify-section-{{ section.id }} .dac-custom-row .empty-33 { width: calc(33% - var(--dac-custom-row-calculation)); }
+  #shopify-section-{{ section.id }} .dac-custom-row .content-50,
+  #shopify-section-{{ section.id }} .dac-custom-row .empty-50 { width: calc(50% - var(--dac-custom-row-calculation)); }
+  #shopify-section-{{ section.id }} .dac-custom-row .content-75,
+  #shopify-section-{{ section.id }} .dac-custom-row .empty-75 { width: calc(75% - var(--dac-custom-row-calculation)); }
+  #shopify-section-{{ section.id }} .dac-custom-row .content-65 { width: calc(62.5% - var(--dac-custom-row-calculation)); }
+  #shopify-section-{{ section.id }} .dac-custom-row .content-two-thirds,
+  #shopify-section-{{ section.id }} .dac-custom-row .empty-two-thirds { width: calc(66.66% - var(--dac-custom-row-calculation)); }
+  #shopify-section-{{ section.id }} .dac-custom-row .content-one-eighth,
+  #shopify-section-{{ section.id }} .dac-custom-row .empty-one-eighth { width: calc(12.5% - var(--dac-custom-row-calculation)); }
+  #shopify-section-{{ section.id }} .dac-custom-row .content-three-eighths,
+  #shopify-section-{{ section.id }} .dac-custom-row .empty-three-eighths { width: calc(37.5% - var(--dac-custom-row-calculation)); }
+  #shopify-section-{{ section.id }} .dac-custom-row .content-five-eighths,
+  #shopify-section-{{ section.id }} .dac-custom-row .empty-five-eighths { width: calc(62.5% - var(--dac-custom-row-calculation)); }
+  #shopify-section-{{ section.id }} .dac-custom-row .content-100 { width: 100%; }
+  #shopify-section-{{ section.id }} .dac-custom-row .empty-auto {
+    margin-inline: auto;
+  }
+  /* Ensure blocks take full section height */
+  #shopify-section-{{ section.id }} .dac-custom-row .block {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+  #shopify-section-{{ section.id }} .dac-custom-row video {
+    width: 100%;
+  }
+  #shopify-section-{{ section.id }} .dac-custom-title {
+    font-size: {{ section.settings.title_font_size_mob }}px;
+    line-height: 1.2;
+    width: fit-content;
+  }
+  #shopify-section-{{ section.id }} .dac-custom-description p,
+  #shopify-section-{{ section.id }} .dac-custom-description * {
+    font-size: {{ section.settings.info_font_size_mob }}px;
+    line-height: 1.2;
+    width: fit-content;
+  }
+  #shopify-section-{{ section.id }} .dac-custom-title {
+    margin-top: .75rem;
+  }
+
+  /* Mobile adjustments */
+  @media (max-width: 767px) {
+    /* If any content block is 33% or 50%, stack vertically */
+    #shopify-section-{{ section.id }} .dac-custom-row {
+      --dac-custom-row-calculation: 1;
+      {% if section.settings.remove_top_margin %}
+        padding-block-start: 1rem;
+      {% else %}
+        padding-block-start: 3rem;
+      {% endif %}
+      padding-block-end: 3rem;
+    }
+
+    #shopify-section-{{ section.id }} .stack-mobile .block {
+      width: 100%;
+    }
+    /* Otherwise, for all 25% blocks, display a 2-by-2 grid */
+    #shopify-section-{{ section.id }} .dac-custom-row.grid-mobile .block {
+      flex: 1 1 calc(50% - var(--dac-custom-row-calculation)) !important;
+    }
+    #shopify-section-{{ section.id }} .dac-custom-row .empty-auto {
+      display: none;
+    }
+    #shopify-section-{{ section.id }} .dac-custom-row .empty-block {
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    #shopify-section-{{ section.id }} .dac-custom-row {
+      --dac-custom-row-gap: {{- section.settings.gap -}}px;
+      row-gap: 8rem; /* SV- */
+      {% if section.settings.remove_top_margin %}
+        padding-block-start: 1rem;
+      {% else %}
+        padding-block-start: 8rem;
+      {% endif %}
+      margin-block-end: 0;
+      padding-block-end: 8rem;
+    }
+
+    #shopify-section-{{ section.id }} .dac-custom-title {
+      font-size: {{ section.settings.title_font_size_desk }}px;
+    }
+    #shopify-section-{{ section.id }} .dac-custom-description p {
+      font-size: {{ section.settings.info_font_size_desk }}px;
+    }
+  }
+</style>
+{% assign mobileStack = false %}
+{% for block in section.blocks %}
+  {% if block.settings.type != 'content' and block.settings.width != '25' and block.settings.width != 'auto' %}
+    {% assign mobileStack = true %}
+  {% endif %}
+{% endfor %}
+
+{%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient | default: section.settings.color_scheme.settings.background | md5 -%}
+
+<div class="color-scheme color-scheme--{{ section.settings.color_scheme.id }} color-scheme--bg-{{ color_scheme_hash }} ">
+  {% if section.settings.section_title != '' %}
+  <div class="container">
+    <div class="section-spacing">
+      <div class="{{ section.settings.title_heading_tag }}">
+        {{ section.settings.section_title }}
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <div class="dac-custom-row container {% if mobileStack %}stack-mobile{% else %}grid-mobile{% endif %}">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'empty' %}
+          <div class="block empty-block empty-{{ block.settings.width }}" style="height: 100%;">
+            {%- comment -%} This is an empty spacer block {%- endcomment -%}
+          </div>
+        {% when 'content' %}
+          {%- assign anchor_url = block.settings.url | default: block.settings.product.url | default: block.settings.collection.url | default: block.settings.page.url | default: block.settings.article.url| default: block.settings.blog.url -%}
+            <div class="block group content-block content-{{ block.settings.width }}" style="height: 100%;">
+            {%- if anchor_url != blank -%}
+              <a href="{{ anchor_url }}" class="content-link" style="text-decoration: none;">
+            {%- else -%}
+              <span class="content-link" style="text-decoration: none;">
+            {%- endif -%}
+              <div class="content-over-media content-over-media--{{ section.settings.image_size }}" style="{%- if block.settings.video != blank -%}aspect-ratio:{{ block.settings.video_aspect_ratio }};{%- endif -%}">
+                {%- assign video = block.settings.video -%}
+                {%- assign image = block.settings.image | default: block.settings.product.featured_image | default: block.settings.collection.featured_image | default: block.settings.article.image -%}
+                {%- capture sizes -%}(max-width: 699px) 100vw, {% if block.settings.expand_collection %}100vw{% else %}(max-width: 1149px) {{ 100 | divided_by: section.settings.collections_per_row_desktop | at_least: 50 }}vw, {{ 100 | divided_by: section.settings.collections_per_row_desktop }}vw{% endif %}{%- endcapture -%}
+                {%- if video != blank -%}
+                  {{- video | video_tag: autoplay: true, loop: true, muted: true, controls: false -}}
+                {%- elsif block.settings.external_video_url != blank  -%}
+                  {%- assign poster_image = block.settings.poster -%}
+                  {%- capture poster -%}
+                    {%- unless block.settings.autoplay -%}
+                      {%- if poster_image != blank -%}
+                        {{- poster_image | image_url: width: poster_image.width | image_tag: sizes: '100vw', widths: '200,300,400,500,600,700,800,900,1000,1200,1400,1600,1800,2000,2200,2400,2600,2800,3000,3200' -}}
+                      {%- else -%}
+                        {{- 'lifestyle-1' | placeholder_svg_tag: 'h-full w-full placeholder' | replace: '<svg', '<svg preserveAspectRatio="xMinYMin slice"' -}}
+                      {%- endif -%}
+                    {%- endunless -%}
+                  {%- endcapture -%}
+              
+                  <video-media host="{{ block.settings.external_video_url.type }}" {% if block.settings.autoplay %}autoplay class="pointer-events-none"{% endif %}>
+                    {{- poster -}}
+
+                    <template>
+                      {%- if block.settings.external_video_url.type == 'youtube' -%}
+                        <iframe src="https://www.youtube.com/embed/{{ block.settings.external_video_url.id }}?playsinline=1&{% if block.settings.autoplay %}autoplay=1&controls=0&mute=1&loop=1&{% endif %}playlist={{ block.settings.external_video_url.id }}&enablejsapi=1&rel=0&modestbranding=1&origin={{ 'https://' | append: request.host | url_encode }}" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
+                      {%- elsif block.settings.external_video_url.type == 'vimeo' -%}
+                        <iframe src="https://player.vimeo.com/video/{{ block.settings.external_video_url.id }}?autopause=1&{% if block.settings.autoplay %}background=1&autoplay=1&loop=1&muted=1&{% endif %}transparent=0&responsive=1&portrait=0&title=0&byline=0&color={{ settings.text_color | remove_first: '#' }}" allow="autoplay; encrypted-media;" allowfullscreen="allowfullscreen"></iframe>
+                      {%- endif -%}
+                    </template>
+                  </video-media>
+
+                  {% if block.settings.show_controls and block.settings.autoplay == false %}
+                    <div class="place-self-center text-center">
+                      <div class="prose">
+                        <button class="play-button" type="button" {{ block.shopify_attributes }}>
+                          <span class="sr-only">{{ 'general.accessibility.play_video' | t }}</span>
+    
+                          <svg fill="none" width="48" height="48" viewBox="0 0 48 48">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M48 24c0 13.255-10.745 24-24 24S0 37.255 0 24 10.745 0 24 0s24 10.745 24 24Zm-18 0-9-6.6v13.2l9-6.6Z" fill="{{ block.settings.icon_color }}"/>
+                          </svg>
+                        </button>    
+                      </div>
+                    </div>
+                  {% endif %}
+          
+                {%- elsif image != blank -%}
+                  {{- image | image_url: width: image.width | image_tag: sizes: sizes, widths: '200,300,400,500,600,800,1000,1200,1400,1600,1800,2000,2200,2400', class: 'zoom-image group-hover:zoom', draggable: 'false' -}}
+                {%- endif -%}
+              </div>
+              <div class="dac-custom-title">
+                {{- block.settings.title | default: block.settings.product.title | default: block.settings.collection.title | default: block.settings.page.title | default: block.settings.article.title | default: block.settings.blog.title -}}
+              </div>
+              {% if block.settings.product and block.settings.show_product_meta_description %}
+                <div class="dac-custom-description">
+                  {% render 'dac-pdp-editions-meta', product: block.settings.product, context: 'dac-collage', show_series_info: block.settings.show_series_info, show_inscription: block.settings.show_inscription %}
+                </div>
+              {% else %}
+                {%- if block.settings.description != blank -%}
+                  <div class="dac-custom-description">
+                    {{ block.settings.description }}
+                  </div>
+                {%- endif -%}
+              {% endif %}
+            {%- if anchor_url != blank -%}
+              </a>
+            {%- else -%}
+              </span>
+            {%- endif -%}
+            </div>
+      {% endcase %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Collage (DAC)",
+  "max_blocks": 8,
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:global.colors.scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Title"
+    },
+    {
+      "type": "select",
+      "id": "title_heading_tag",
+      "label": "Font Size",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
+        }
+      ],
+      "default": "h4"
+    },
+    {
+      "type": "range",
+      "id": "title_vertical_spacing",
+      "label": "Title vertical space",
+      "min": 0,
+      "max": 400,
+      "step": 5,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "image_size",
+      "label": "t:global.image.size",
+      "info": "t:global.image.ratio_avoid_cropping_info",
+      "options": [
+        {
+          "value": "auto",
+          "label": "t:global.sizes.original_image_ratio"
+        },
+        {
+          "value": "xs",
+          "label": "t:global.sizes.x_small"
+        },
+        {
+          "value": "sm",
+          "label": "t:global.sizes.small"
+        },
+        {
+          "value": "md",
+          "label": "t:global.sizes.medium"
+        },
+        {
+          "value": "lg",
+          "label": "t:global.sizes.large",
+        }
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "checkbox",
+      "id": "remove_top_margin",
+      "label": "Remove top margin"
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Gap (Desktop)",
+      "info": "Sets the gap between items in the row.",
+      "step": 1,
+      "min": 0,
+      "max": 100,
+      "default": 48,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "gap_mobile",
+      "label": "Gap (Mobile)",
+      "info": "Sets the gap between items in the row.",
+      "step": 1,
+      "min": 0,
+      "max": 100,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size_desk",
+      "label": "Title font size (Desktop)",
+      "default": 13,
+      "unit": "px",
+      "min": 8,
+      "max": 50,
+      "step": 1,
+      "info": "Sets the font size of the title."
+    },
+    {
+      "type": "range",
+      "id": "info_font_size_desk",
+      "label": "Info font size (Desktop)",
+      "default": 13,
+      "unit": "px",
+      "min": 8,
+      "max": 50,
+      "step": 1,
+      "info": "Sets the font size of the content."
+    },
+    {
+      "type": "range",
+      "id": "title_font_size_mob",
+      "label": "Title font size (Mobile)",
+      "default": 13,
+      "unit": "px",
+      "min": 8,
+      "max": 50,
+      "step": 1,
+      "info": "Sets the font size of the title."
+    },
+    {
+      "type": "range",
+      "id": "info_font_size_mob",
+      "label": "Info font size (Mobile)",
+      "default": 13,
+      "unit": "px",
+      "min": 8,
+      "max": 50,
+      "step": 1,
+      "info": "Sets the font size of the content."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "empty",
+      "name": "Empty Block",
+      "settings": [
+        {
+          "type": "select",
+          "id": "width",
+          "label": "Width",
+          "default": "auto",
+          "options": [
+            { "value": "25", "label": "1/4" },
+            { "value": "75", "label": "3/4" },
+            { "value": "33", "label": "1/3" },
+            { "value": "two-thirds", "label": "2/3" },
+            { "value": "50", "label": "1/2" },
+            { "value": "one-eighth", "label": "1/8" },
+            { "value": "three-eighths", "label": "3/8" },
+            { "value": "65", "label": "5/8" },
+            { "value": "seven-eighths", "label": "7/8" },
+            { "value": "auto", "label": "Auto (fills available space)" }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "name": "Content Block",
+      "settings": [
+        {
+          "type": "select",
+          "id": "width",
+          "label": "Width",
+          "default": "25",
+          "options": [
+            { "value": "25", "label": "1/4" },
+            { "value": "75", "label": "3/4" },
+            { "value": "33", "label": "1/3" },
+            { "value": "two-thirds", "label": "2/3" },
+            { "value": "50", "label": "1/2" },
+            { "value": "one-eighth", "label": "1/8" },
+            { "value": "three-eighths", "label": "3/8" },
+            { "value": "65", "label": "5/8" },
+            { "value": "seven-eighths", "label": "7/8" },
+            { "value": "100", "label": "Full" }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "info": "Takes precedence over Content type title (e.g.: 'Product', 'Collection' etc). Remove if you want those to show instead."
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description",
+          "info": "Leave empty to hide."
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link URL",
+          "info": "Takes precedence over Content type URL (e.g.: 'Product', 'Collection' etc). Remove if you want the type URL to show instead."
+        },
+        {
+          "type": "range",
+          "id": "text_width",
+          "label": "Text width (max)",
+          "unit": "px",
+          "min": 400,
+          "max": 1000,
+          "step": 25,
+          "default": 400
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Takes precedence over Content types (e.g.: 'Product', 'Collection' etc) and Video."
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video",
+          "info": "Takes precedence over Content types' featured image (e.g.: 'Product', 'Collection' etc)."
+        },
+        {
+          "type": "select",
+          "id": "video_aspect_ratio",
+          "label": "Video Aspect Ratio",
+          "options": [
+            {
+              "value": "16/9",
+              "label": "16:9 (Widescreen)"
+            },
+            {
+              "value": "4/3",
+              "label": "4:3 (Standard)"
+            },
+            {
+              "value": "1/1",
+              "label": "1:1 (Square)"
+            },
+            {
+              "value": "3/4",
+              "label": "3:4 (Standard Vertical)"
+            },
+            {
+              "value": "9/16",
+              "label": "9:16 (Vertical)"
+            },
+            {
+              "value": "21/9",
+              "label": "21:9 (Cinematic)"
+            },
+            {
+              "value": "4/5",
+              "label": "4:5"
+            },
+            {
+              "value": "5/4",
+              "label": "5:4"
+            }            
+          ],
+          "default": "16/9"
+        },
+        {
+          "type": "video_url",
+          "id": "external_video_url",
+          "accept": ["vimeo", "youtube"],
+          "label": "t:global.video.video_url"
+        },
+        {
+          "type": "image_picker",
+          "id": "poster",
+          "label": "t:sections.video.poster_image",
+          "info": "t:sections.video.poster_image_info"
+        },
+        {
+          "type": "checkbox",
+          "id": "autoplay",
+          "label": "t:global.video.autoplay",
+          "info": "t:global.video.autoplay_info",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "show_controls",
+          "label": "t:global.video.show_controls",
+          "default": true
+        },
+        {
+          "type": "color",
+          "id": "icon_color",
+          "label": "t:global.colors.button_background",
+          "default": "#ffffff"
+        },
+        {
+          "type": "header",
+          "content": "Content types",
+          "info": "Select a product type from the list below to populate this block. Note, each type takes precedence over the ones below; so if 'Product' is set, it will have a higher priority than 'Collection'." 
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_product_meta_description",
+          "label": "Show product meta description",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_series_info",
+          "label": "Show Series Info",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_inscription",
+          "label": "Show Inscription",
+          "default": true
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "page",
+          "id": "page",
+          "label": "Page",
+          "info": "Make sure to set an image or video when selecting this type because it doesn't have a featured image."
+        },
+        {
+          "type": "article",
+          "id": "article",
+          "label": "Article"
+        },
+        {
+          "type": "blog",
+          "id": "blog",
+          "label": "blog",
+          "info": "Make sure to set an image or video when selecting this type because it doesn't have a featured image."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collage (DAC)",
+      "category": "DAC Sections",
+      "blocks": [
+        {
+          "type": "content"
+        },
+        {
+          "type": "content"
+        },
+        {
+          "type": "empty"
+        },
+        {
+          "type": "content"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

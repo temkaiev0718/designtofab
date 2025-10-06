@@ -1,0 +1,99 @@
+<div class="animation" style="background: transparent; width: 30px; height: 40px;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 40" width="30" height="40" preserveAspectRatio="xMinYMin meet"
+       style="width: 100%; height: 100%;">
+    <defs>
+      <clipPath id="ljarrow">
+        <rect width="30" height="40" x="0" y="0"></rect>
+      </clipPath>
+    </defs>
+    <g clip-path="url(#ljarrow)">
+      <!-- Main vertical arrow line -->
+      <g transform="translate(15,10)">
+        <path class="arrow-line" stroke-linecap="round" stroke-linejoin="miter" fill="none"
+              stroke="white" stroke-width="1" d="M0,0 L0,20" />
+      </g>
+      <!-- Left arrow tip at bottom of vertical line -->
+      <g transform="translate(15,30)">
+        <path class="arrow-tip-left" stroke-linecap="round" stroke-linejoin="miter" fill="none"
+              stroke="white" stroke-width="1" d="M0,0 L5,-5" />
+      </g>
+      <!-- Right arrow tip at bottom of vertical line -->
+      <g transform="translate(15,30)">
+        <path class="arrow-tip-right" stroke-linecap="round" stroke-linejoin="miter" fill="none"
+              stroke="white" stroke-width="1" d="M0,0 L-5,-5" />
+      </g>
+    </g>
+  </svg>
+</div>
+
+<style>
+/* Total cycle: 6s = 2s for line drawing, 1s for tip rotation, 3s pause */
+
+/* Vertical line: drawn during the first 2 seconds */
+@keyframes drawLine {
+  0% {
+    stroke-dashoffset: 20;
+  }
+  33.33% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Left tip: starts rotated by -45° (so its effective orientation is vertical)
+   then rotates to 0° so that its drawn angle of -45° shows. */
+@keyframes openLeftTip {
+  0%, 33.33% {
+    opacity: 0;
+    transform: rotate(-45deg);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+}
+
+/* Right tip: starts rotated by 45° (making it vertical)
+   then rotates to 0° so its drawn angle of -135° (i.e. the natural angle of "M0,0 L-5,-5") appears. */
+@keyframes openRightTip {
+  0%, 33.33% {
+    opacity: 0;
+    transform: rotate(45deg);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+}
+
+/* Animate the vertical line */
+.arrow-line {
+  stroke-dasharray: 20;
+  stroke-dashoffset: 20;
+  animation: drawLine 5s linear infinite;
+}
+
+/* Set transform origin for the arrow tips at the connection point (0,0) */
+.arrow-tip-left,
+.arrow-tip-right {
+  transform-origin: 0 0;
+}
+
+/* Apply tip animations */
+.arrow-tip-left {
+  animation: openLeftTip 5s ease-in-out infinite;
+}
+.arrow-tip-right {
+  animation: openRightTip 5s ease-in-out infinite;
+}
+</style>

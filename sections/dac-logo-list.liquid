@@ -1,0 +1,399 @@
+{%- if section.blocks.size > 0 -%}
+  <style>
+    #shopify-section-{{ section.id }} {
+      --logo-list-item-height: {{ section.settings.logo_height | default: 60 }}px;
+      {%- if section.settings.stack_on_mobile -%}
+        --logo-list-grid: auto / repeat({{ 2 | at_most: section.blocks.size }}, minmax(0, 250px));
+      {%- else -%}
+        --logo-list-grid: auto / auto-flow max-content;
+      {%- endif -%}
+
+      --logo-list-item-border-color: {{ section.settings.logo_item_border.rgb }};
+      --logo-list-gap: {% if section.settings.logo_item_border == blank or section.settings.logo_item_border == 'rgba(0,0,0,0)' %}0px{% else %}1px{% endif %};
+    }
+
+    @media screen and (min-width: 700px) {
+      #shopify-section-{{ section.id }} {
+        --logo-list-grid: auto / repeat({{ 3 | at_most: section.blocks.size }}, minmax(0, 250px));
+      }
+    }
+
+    @media screen and (min-width: 1000px) {
+      #shopify-section-{{ section.id }} {
+        --logo-list-grid: auto / repeat({{ section.settings.items_per_row | at_most: section.blocks.size }}, minmax(0, 250px));
+      }
+    }
+
+    #shopify-section-{{ section.id }} .logo-list--scrollable {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      background-color: {{ section.settings.track_background }};
+      border-radius: 2.5rem;
+      padding-block: 0.5rem;
+    }
+
+    #shopify-section-{{ section.id }} .logo-list__track {
+      display: flex;
+      flex-wrap: nowrap;
+      width: max-content;
+      padding: 0 2rem;
+      will-change: transform;
+    }
+
+    #shopify-section-{{ section.id }} .logo-list__group {
+      display: flex;
+      gap: 2rem;
+      flex-shrink: 0;
+      align-items: center;
+    }
+
+    #shopify-section-{{ section.id }} .logo-list__track:not(.scrolling) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    #shopify-section-{{ section.id }} .logo-list__track:not(.scrolling) .logo-list__group--duplicate {
+      display: none;
+    }
+
+    #shopify-section-{{ section.id }} .logo-list--scrollable.is-scrolling::before,
+    #shopify-section-{{ section.id }} .logo-list--scrollable.is-scrolling::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 60px;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    #shopify-section-{{ section.id }} .logo-list--scrollable.is-scrolling::before {
+      left: 0;
+      background: linear-gradient(90deg, 
+        {{ section.settings.color_scheme.settings.background | default: '#ffffff' }} 0%, 
+        {{ section.settings.color_scheme.settings.background | default: '#ffffff' | color_modify: 'alpha', 0 }} 100%);
+    }
+
+    #shopify-section-{{ section.id }} .logo-list--scrollable.is-scrolling::after {
+      right: 0;
+      background: linear-gradient(90deg, 
+        {{ section.settings.color_scheme.settings.background | default: '#ffffff' | color_modify: 'alpha', 0 }} 0%, 
+        {{ section.settings.color_scheme.settings.background | default: '#ffffff' }} 100%);
+    }
+
+    #shopify-section-{{ section.id }} .logo-list--scrollable .logo-list__item {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 1rem;
+      min-height: var(--logo-list-item-height);
+      flex-shrink: 0;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    #shopify-section-{{ section.id }} .logo-list--scrollable .logo-list__item:hover {
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
+
+    #shopify-section-{{ section.id }} .logo-list--scrollable .logo-list__item img,
+    #shopify-section-{{ section.id }} .logo-list--scrollable .logo-list__item svg {
+      height: var(--logo-list-item-height);
+      width: auto !important;
+      object-fit: contain;
+      display: block;
+      {% if section.settings.invert_logo %}filter: invert(1);{% endif %}
+    }
+
+    #shopify-section-{{ section.id }} .logo-list--scrollable .constrained-image {
+      max-width: none !important;
+      width: auto !important;
+      height: var(--logo-list-item-height);
+    }
+
+    @media screen and (max-width: 699px) {
+      #shopify-section-{{ section.id }} .logo-list--scrollable .logo-list__item {
+        min-height: var(--logo-list-item-height);
+        padding: 0 1.5rem;
+      }
+
+      #shopify-section-{{ section.id }} .logo-list--scrollable .logo-list__item img,
+      #shopify-section-{{ section.id }} .logo-list--scrollable .logo-list__item svg,
+      #shopify-section-{{ section.id }} .logo-list--scrollable .constrained-image {
+        height: var(--logo-list-item-height);
+      }
+
+      #shopify-section-{{ section.id }} .logo-list__group {
+        gap: 1.5rem;
+      }
+    }
+  </style>
+
+  <div class="section-spacing color-scheme color-scheme--{{ section.settings.color_scheme.id }} {% if section.settings.separate_section_with_border %}bordered-section{% endif %}" data-section-id="{{ section.id }}">
+    <div class="container">
+      <div class="section-stack">
+        {%- render 'section-header', subheading: section.settings.subheading, heading: section.settings.title, text_alignment: 'center' -%}
+
+        {%- if section.settings.enable_auto_scroll -%}
+          <div class="logo-list logo-list--scrollable">
+            <div class="logo-list__track">
+              <div class="logo-list__group">
+                {%- for block in section.blocks -%}
+                  <div class="logo-list__item">
+                    {%- if block.settings.logo != blank -%}
+                      {%- assign logo_height = section.settings.logo_height | times: 2 %}
+                      {{ block.settings.logo | image_url: height: logo_height | image_tag: class: 'constrained-image', alt: block.settings.logo.alt }}
+                    {%- endif -%}
+                  </div>
+                {%- endfor -%}
+              </div>
+              <div class="logo-list__group logo-list__group--duplicate" aria-hidden="true">
+                {%- for block in section.blocks -%}
+                  <div class="logo-list__item">
+                    {%- if block.settings.logo != blank -%}
+                      {{ block.settings.logo | image_url: height: logo_height | image_tag: class: 'constrained-image', alt: block.settings.logo.alt }}
+                    {%- endif -%}
+                  </div>
+                {%- endfor -%}
+              </div>
+              <div class="logo-list__group logo-list__group--duplicate" aria-hidden="true">
+                {%- for block in section.blocks -%}
+                  <div class="logo-list__item">
+                    {%- if block.settings.logo != blank -%}
+                      {{ block.settings.logo | image_url: height: logo_height | image_tag: class: 'constrained-image', alt: block.settings.logo.alt }}
+                    {%- endif -%}
+                  </div>
+                {%- endfor -%}
+              </div>
+            </div>
+          </div>
+
+          <script>
+            document.addEventListener('DOMContentLoaded', function () {
+              const sectionId = '{{ section.id }}';
+              const logoSection = document.querySelector(`[data-section-id="${sectionId}"]`);
+              if (!logoSection) return;
+
+              const logoTrack = logoSection.querySelector('.logo-list__track');
+              const firstGroup = logoTrack.querySelector('.logo-list__group');
+              let scrollAnimationFrame = null;
+
+              function stopScrolling() {
+                logoTrack.classList.remove('scrolling');
+                logoSection.classList.remove('is-scrolling');
+                logoTrack.style.transform = 'translate3d(0, 0, 0)';
+                if (scrollAnimationFrame) {
+                  cancelAnimationFrame(scrollAnimationFrame);
+                  scrollAnimationFrame = null;
+                }
+              }
+
+              function startScrolling() {
+                const groupWidth = firstGroup.scrollWidth;
+                const containerWidth = logoSection.offsetWidth;
+
+                 {% comment %} if (window.innerWidth >= 1000 || groupWidth <= containerWidth) {
+                stopScrolling();
+                return;
+                } {% endcomment %}
+
+                logoSection.classList.add('is-scrolling');
+                logoTrack.classList.add('scrolling');
+
+                let x = 0;
+                const totalDuration = {{ section.settings.scroll_speed | default: 30 }} * 1000;
+                const fps = 60;
+                const pixelsPerFrame = groupWidth / (totalDuration / (1000 / fps));
+
+                function animate() {
+                  x -= pixelsPerFrame;
+                  if (Math.abs(x) >= groupWidth) x = 0;
+                  logoTrack.style.transform = `translate3d(${x}px, 0, 0)`;
+                  scrollAnimationFrame = requestAnimationFrame(animate);
+                }
+
+                scrollAnimationFrame = requestAnimationFrame(animate);
+              }
+
+              const images = logoSection.querySelectorAll('img');
+              let loadedImages = 0;
+
+              images.forEach(img => {
+                if (img.complete) {
+                  loadedImages++;
+                  if (loadedImages === images.length) startScrolling();
+                } else {
+                  img.addEventListener('load', () => {
+                    loadedImages++;
+                    if (loadedImages === images.length) startScrolling();
+                  });
+                }
+              });
+
+              startScrolling();
+
+              window.addEventListener('resize', () => {
+                stopScrolling();
+                startScrolling();
+              });
+            });
+          </script>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+
+{% schema %}
+{
+  "name": "Logo List (DAC)",
+  "class": "shopify-section--logo-list",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:global.colors.scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "color",
+      "id": "track_background",
+      "label": "Logo Track Background",
+      "default": "#ffffff"
+    },
+    {
+        "type": "checkbox",
+        "id": "invert_logo",
+        "label": "Invert logo colours?",
+        "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "separate_section_with_border",
+      "label": "t:global.section.separate_section_with_border",
+      "default": true
+    },
+    {
+      "type": "inline_richtext",
+      "id": "subheading",
+      "label": "t:global.text.subheading"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "t:global.text.heading",
+      "default": "Logo list"
+    },
+    {
+      "type": "header",
+      "content": "Display Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_auto_scroll",
+      "label": "Enable auto-scrolling",
+      "info": "When enabled, logos will automatically scroll horizontally if they overflow the container",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "scroll_speed",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "s",
+      "label": "Scroll speed",
+      "info": "Time in seconds for one complete scroll cycle. Higher values = slower scrolling. Only applies when auto-scrolling is enabled.",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "logo_height",
+      "min": 30,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Logo height",
+      "default": 60
+    },
+    {
+      "type": "checkbox",
+      "id": "stack_on_mobile",
+      "label": "t:sections.logo_list.stack_on_mobile",
+      "info": "Only applies when auto-scrolling is disabled",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "items_per_row",
+      "min": 3,
+      "max": 7,
+      "label": "t:sections.logo_list.items_per_row_desktop",
+      "info": "Only applies when auto-scrolling is disabled",
+      "default": 5
+    },
+    {
+      "type": "header",
+      "content": "t:global.colors.category"
+    },
+    {
+      "type": "color",
+      "id": "logo_item_background",
+      "label": "t:sections.logo_list.logo_background"
+    },
+    {
+      "type": "color",
+      "id": "logo_item_border",
+      "label": "t:sections.logo_list.logo_border"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "t:sections.logo_list.blocks.logo.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "t:sections.logo_list.blocks.logo.logo_image",
+          "info": "t:sections.logo_list.blocks.logo.logo_image_info"
+        },
+        {
+          "type": "range",
+          "id": "logo_width",
+          "min": 50,
+          "max": 250,
+          "unit": "px",
+          "step": 10,
+          "label": "t:sections.logo_list.blocks.logo.logo_width",
+          "default": 120
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:global.text.link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Logo List (DAC)",
+      "category": "DAC Sections",
+      "blocks": [
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" }
+      ]
+    }
+  ]
+}
+{% endschema %}

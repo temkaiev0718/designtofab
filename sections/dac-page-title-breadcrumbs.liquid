@@ -1,0 +1,281 @@
+<style>
+#shopify-section-{{ section.id }} {
+  --section-vertical-spacing-override: {{ section.settings.section_padding }}px;
+}
+#section-{{ section.id }} .heading {
+  margin: 0;
+}
+#section-{{ section.id }} .breadcrumbs-wrap * {
+  margin: 0;
+  line-height: 1.1;
+}
+.dac--title-breadcrumbs .breadcrumbs__list {
+  gap: 0.25rem;
+  margin-bottom: 1.75rem !important;
+  align-items: baseline;
+}
+.dac--title-breadcrumbs .breadcrumbs__item:not(:last-child) {
+  white-space: nowrap;
+}
+.dac--title-breadcrumbs .breadcrumbs__item:not(:last-child):after {
+  margin: 0;
+  left: -1px;
+}
+.dac--title-breadcrumbs .breadcrumbs__link {
+  text-transform: none;
+  font-size: 13px;
+}
+</style>
+
+{%- if section.blocks.size > 0 -%}
+  {%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient | default: section.settings.color_scheme.settings.background | md5 -%}
+
+  <div id="section-{{ section.id }}" class="color-scheme color-scheme--{{ section.settings.color_scheme.id }} color-scheme--bg-{{ color_scheme_hash }} {% unless section.settings.remove_vertical_spacing %}section-spacing{% endunless %} {% if section.settings.separate_section_with_border %}bordered-section{% endif %}">
+    <div class="container">
+      <div class="prose text-{{ section.settings.text_position }}">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'heading' -%}
+              {%- capture heading_style_vars -%}
+                --heading-size-mobile: {{ block.settings.font_size_mobile }}; 
+                --heading-size-desktop: {{ block.settings.font_size_desktop }}; 
+              {%- endcapture -%}
+            
+              {%- if block.settings.text != blank -%}
+                <p class="heading {{ block.settings.heading_tag }}" style="{{ heading_style_vars }}" {{ block.shopify_attributes }}>
+                  {% if block.settings.heading_uppercase %}
+                    {{ block.settings.text | upcase }}
+                  {% else %}
+                    {{ block.settings.text }}
+                  {% endif %}
+                </p>
+              {%- endif -%}
+
+            {%- when 'richtext' -%}
+              {%- if block.settings.content != blank -%}
+                <div {{ block.shopify_attributes }}>
+                  {{- block.settings.content -}}
+                </div>
+              {%- endif -%}
+
+            {%- when 'breadcrumb' -%}
+              <div class="breadcrumbs-wrap" {{ block.shopify_attributes }}>
+                {% render 'dac-breadcrumbs', heading_tag: block.settings.heading_tag %}
+              </div>
+
+            {%- when 'liquid' -%}
+              {%- if block.settings.liquid != blank -%}
+                <div {{ block.shopify_attributes }}>
+                  {{- block.settings.liquid -}}
+                </div>
+              {%- endif -%}
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+<style>
+  .dac--title-breadcrumbs .prose .heading {
+    line-height: 1.1;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Page Title + Breadcrumbs",
+  "class": "shopify-section--rich-text dac--title-breadcrumbs",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "custom.overlay"]
+  },
+  "settings": [
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Section Padding",
+      "min": 0,
+      "max": 400,
+      "step": 5,
+      "default": 50,
+      "unit": "px"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:global.colors.scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "separate_section_with_border",
+      "label": "t:global.section.separate_section_with_border",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "text_position",
+      "label": "t:global.position.content_position",
+      "options": [
+        {
+          "value": "start",
+          "label": "t:global.position.left"
+        },
+        {
+          "value": "center",
+          "label": "t:global.position.center"
+        },
+        {
+          "value": "end",
+          "label": "t:global.position.right"
+        }
+      ],
+      "default": "start"
+    },
+    {
+      "type": "checkbox",
+      "id": "remove_vertical_spacing",
+      "label": "t:global.spacing.remove_vertical_spacing",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Custom Class"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "t:sections.rich_text.blocks.heading.name",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "t:global.text.text",
+          "default": "Heading"
+        },
+        {
+          "type": "select",
+          "id": "heading_tag",
+          "label": "Font Size",
+          "options": [
+            {
+              "value": "h1",
+              "label": "H1"
+            },
+            {
+              "value": "h2",
+              "label": "H2"
+            },
+            {
+              "value": "h3",
+              "label": "H3"
+            },
+            {
+              "value": "h4",
+              "label": "H4"
+            },
+            {
+              "value": "h5",
+              "label": "H5"
+            },
+            {
+              "value": "h6",
+              "label": "H6"
+            }
+          ],
+          "default": "h6"
+        },
+        {
+          "type": "checkbox",
+          "id": "heading_uppercase",
+          "label": "Uppercase?",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "breadcrumb",
+      "name": "Breadcrumb",
+      "settings": [
+        {
+          "type": "select",
+          "id": "heading_tag",
+          "label": "Font Size",
+          "options": [
+            {
+              "value": "h1",
+              "label": "H1"
+            },
+            {
+              "value": "h2",
+              "label": "H2"
+            },
+            {
+              "value": "h3",
+              "label": "H3"
+            },
+            {
+              "value": "h4",
+              "label": "H4"
+            },
+            {
+              "value": "h5",
+              "label": "H5"
+            },
+            {
+              "value": "h6",
+              "label": "H6"
+            }
+          ],
+          "default": "h1",
+          "info": "note: this setting is no longer used"
+        }
+      ]
+    },
+    {
+      "type": "liquid",
+      "name": "t:sections.rich_text.blocks.liquid.name",
+      "settings": [
+        {
+          "type": "liquid",
+          "id": "liquid",
+          "label": "t:global.code.liquid",
+          "default": "<p>Write custom Liquid code to include widget or dynamic code.</p>"
+        }
+      ]
+    },
+    {
+      "type": "richtext",
+      "name": "t:sections.rich_text.blocks.paragraph.name",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "t:global.text.content",
+          "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Page Title + Breadcrumbs (DAC)",
+      "category": "DAC Sections",
+      "blocks": [
+        {
+          "type": "heading",
+          "settings": {
+            "text": "Heading"
+          }
+        },
+        {
+          "type": "breadcrumb"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

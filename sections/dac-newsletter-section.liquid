@@ -1,0 +1,313 @@
+{%- comment -%}
+------------------------------------------------------------------------------------------------------------------------
+CSS
+------------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+
+<style>
+  #shopify-section-{{ section.id }} {
+    --newsletter-bg-color: {{ section.settings.background_color }};
+    --newsletter-text-color: {{ section.settings.text_color }};
+  }
+
+  .dac-newsletter {
+    background-color: var(--newsletter-bg-color, #FFD43A);
+    padding: 60px 20px;
+    text-align: left;
+  }
+
+  .dac-newsletter__container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .dac-newsletter__title {
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 1.1;
+    color: var(--newsletter-text-color, #000);
+    margin: 0 0 40px 0;
+    max-width: 600px;
+  }
+
+  .dac-newsletter__content {
+    font-size: 20px;
+    line-height: 1.4;
+    color: var(--newsletter-text-color, #000);
+    margin: 0 0 40px 0;
+    max-width: 800px;
+  }
+
+  .dac-newsletter__form {
+    display: flex;
+    gap: 16px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .dac-newsletter__input-group {
+    flex: 1;
+    min-width: 200px;
+    position: relative;
+  }
+
+  .dac-newsletter__input {
+    width: 100%;
+    padding: 16px;
+    font-size: 16px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+    transition: all 0.2s ease;
+    font-family: inherit;
+  }
+
+  .dac-newsletter__input:focus {
+    outline: none;
+    border-color: #000;
+    background: rgba(255, 255, 255, 1);
+  }
+
+  .dac-newsletter__input::placeholder {
+    color: #666;
+    opacity: 1;
+  }
+
+  .dac-newsletter__submit {
+    color: black;
+    border: none;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    justify-content: center;
+    flex-shrink: 0;
+    position: absolute;
+    top : 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+
+  .dac-newsletter__submit:hover {
+    opacity: 0.9;
+  }
+
+  .dac-newsletter__arrow {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+  }
+
+  .dac-newsletter__message {
+    margin-top: 20px;
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-weight: 500;
+  }
+
+  .dac-newsletter__message--success {
+    background-color: rgba(34, 197, 94, 0.1);
+    color: #16a34a;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+  }
+
+  .dac-newsletter__message--error {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: #dc2626;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .dac-newsletter {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .dac-newsletter__title {
+      font-size: 20px;
+      margin-bottom: 24px;
+    }
+
+    .dac-newsletter__content {
+      font-size: 18px;
+      margin-bottom: 32px;
+    }
+
+    .dac-newsletter__form {
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .dac-newsletter__input-group {
+      min-width: 100%;
+    }
+
+    .dac-newsletter__submit {
+      padding: 18px ;
+    }
+  }
+</style>
+
+{%- comment -%}
+------------------------------------------------------------------------------------------------------------------------
+LIQUID
+------------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+
+<section class="dac-newsletter">
+  <div class="dac-newsletter__container">
+    {%- if section.settings.title != blank -%}
+      <h2 class="dac-newsletter__title">{{ section.settings.title }}</h2>
+    {%- endif -%}
+    
+    {%- if section.settings.content != blank -%}
+      <div class="dac-newsletter__content">{{ section.settings.content }}</div>
+    {%- endif -%}
+
+    {%- assign newsletter_form_id = 'dac-newsletter-form-' | append: section.id -%}
+
+    {%- form 'customer', id: newsletter_form_id, class: 'dac-newsletter__form' -%}
+      {%- if form.posted_successfully? -%}
+        <div class="dac-newsletter__message dac-newsletter__message--success">
+          {{ 'general.newsletter.subscribed_successfully' | t }}
+        </div>
+      {%- else -%}
+        {%- if form.errors -%}
+          <div class="dac-newsletter__message dac-newsletter__message--error">
+            {%- for field in form.errors -%}
+              {{ field[0] | capitalize }} {{ field[1] }}.
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        
+        <div class="dac-newsletter__input-group">
+          <input 
+            type="text" 
+            name="contact[first_name]" 
+            class="dac-newsletter__input"
+            placeholder="{{ section.settings.first_name_placeholder | default: 'First Name' }}"
+            required
+            autocomplete="given-name"
+          >
+        </div>
+
+        <div class="dac-newsletter__input-group">
+          <input 
+            type="text" 
+            name="contact[last_name]" 
+            class="dac-newsletter__input"
+            placeholder="{{ section.settings.last_name_placeholder | default: 'Last Name' }}"
+            required
+            autocomplete="family-name"
+          >
+        </div>
+
+        <div class="dac-newsletter__input-group">
+          <input 
+            type="email" 
+            name="contact[email]" 
+            class="dac-newsletter__input"
+            placeholder="{{ section.settings.email_placeholder | default: 'Email' }}"
+            required
+            autocomplete="email"
+          >
+          <button type="submit" class="dac-newsletter__submit">
+            {% comment %} {{ section.settings.button_text | default: 'Subscribe' }} {% endcomment %}
+            <svg class="dac-newsletter__arrow" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+          </button>
+        </div>
+      {%- endif -%}
+    {%- endform -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Newsletter (DAC)",
+  "class": "shopify-section--dac-newsletter",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Custom newsletter signup section with first name, last name, and email fields."
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title",
+      "default": "<p>Get 5%<br>Off Your First Order</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content",
+      "default": "<p>Subscribe to our newsletter to unlock your discount code and receive exclusive information about products, builds and more!</p>"
+    },
+    {
+      "type": "header",
+      "content": "Form Settings"
+    },
+    {
+      "type": "text",
+      "id": "first_name_placeholder",
+      "label": "First Name Placeholder",
+      "default": "First Name"
+    },
+    {
+      "type": "text",
+      "id": "last_name_placeholder",
+      "label": "Last Name Placeholder",
+      "default": "Last Name"
+    },
+    {
+      "type": "text",
+      "id": "email_placeholder",
+      "label": "Email Placeholder",
+      "default": "Email"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Subscribe"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#FFD43A"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#000000"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Newsletter (DAC)",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

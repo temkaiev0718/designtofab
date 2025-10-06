@@ -33,6 +33,11 @@ note that this may have impact on different places.
     {{ text_font_bold_italic | font_face: font_display: 'fallback' }}
   {%- endif -%}
 
+  /* SV- custom font */
+  {% if settings.custom_font_css != blank %}
+    {{ settings.custom_font_css }}
+  {% endif %}
+
   :root {
     /* Container */
     --container-max-width: 100%;
@@ -87,6 +92,14 @@ note that this may have impact on different places.
     --button-text-transform: {{ settings.button_text_transform }};
     --button-letter-spacing: {% if language_code == 'ar' %}0{% else %}{{ settings.button_letter_spacing | divided_by: 100.0 }}{% endif %}em;
 
+    /* SV- custom font */
+    {% if settings.custom_heading_font_name != blank %}
+      --heading-font-family: '{{ settings.custom_heading_font_name }}', {{ settings.heading_font.fallback_families }};
+    {% endif %}
+    {% if settings.custom_body_font_name != blank %}
+      --text-font-family: '{{ settings.custom_body_font_name }}', {{ settings.text_font.fallback_families }};
+    {% endif %}
+
     /* Font sizes */
     {%- comment -%}
     IMPLEMENTATION NOTE: Our theme uses, for heading, a fluid typography, which means it will linearly increased from a
@@ -127,6 +140,9 @@ note that this may have impact on different places.
 
     --checkmark-svg-url: url({{ 'checkmark.svg' | asset_url }});
     --cursor-zoom-in-svg-url: url({{ 'cursor-zoom-in.svg' | asset_url }});
+
+    /* SV- Link hover color */
+    --link-hover-color: {{ settings.link_hover_color }};
   }
 
   [dir="rtl"]:root {

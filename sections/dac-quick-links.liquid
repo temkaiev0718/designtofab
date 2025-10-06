@@ -1,0 +1,212 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    --section-vertical-spacing-override: {{ section.settings.section_padding }}px;
+  }
+
+  .link-bar {
+    position: relative;
+    display: block;
+    text-align: center;
+  }
+
+  .link-bar__wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    max-width: 100%;
+  }
+
+  .link-bar__scroller {
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+    overflow-x: auto;
+    overflow-y: hidden;    
+  }
+
+  .link-bar__title {
+    position: -webkit-sticky;
+    position: sticky;
+    left: 0;
+    flex-shrink: 0;
+    z-index: 1;
+    opacity: 0.6;
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin-right: 5px;
+  }
+
+  .link-bar__title:after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    top: 0;
+    width: 28px;
+    background-image: linear-gradient(to right, rgb(243, 240, 233) 35%, rgba(243, 240, 233, 0));
+    display: none;
+  }
+
+  [dir="ltr"] .link-bar__title + .link-bar__scroller {
+    padding-left: 20px;
+  }
+
+  [dir="rtl"] .link-bar__title + .link-bar__scroller {
+    padding-right: 28px;
+  }
+
+  .link-bar__linklist {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    grid-gap: 28px;
+    gap: 28px;
+    min-width: max-content;
+    list-style: none;
+    padding: 0;
+    margin: 0;    
+  }
+
+  .link-bar__link-item--selected {
+    scroll-snap-align: center;
+  }
+
+  .link-bar .link-active:after {
+    transform: scaleX(1);
+  }
+
+  @media screen and (max-width: 999px) {
+    [dir="ltr"] .link-bar__wrapper::after {
+      left: 100%;
+    }
+    [dir="rtl"] .link-bar__wrapper::after {
+      right: 100%;
+    }
+    .link-bar__wrapper::after {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: var(--container-gutter);
+      top: 0;
+      background-image: linear-gradient(to var(--transform-origin-start), rgb(var(--background)), rgba(var(--background), 0));
+    }
+
+    [dir="ltr"] .link-bar__scroller {
+      margin-right: calc(-1 * var(--container-gutter));
+    }
+
+    [dir="rtl"] .link-bar__scroller {
+      margin-left: calc(-1 * var(--container-gutter));
+    }
+
+    [dir="ltr"] .link-bar__linklist {
+      padding-right: var(--container-gutter);
+    }
+
+    [dir="rtl"] .link-bar__linklist {
+      padding-left: var(--container-gutter);
+    }
+  }
+
+  @media screen and (min-width: 741px) {
+    .link-bar__title {
+      font-size: 12px;
+    }
+
+    [dir="ltr"] .link-bar__title + .link-bar__scroller {
+      padding-left: 48px;
+    }
+    [dir="rtl"] .link-bar__title + .link-bar__scroller {
+      padding-right: 48px;
+    }
+
+    .link-bar__linklist {
+      gap: 40px;
+    }
+  }
+</style>
+
+{%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient | default: section.settings.color_scheme.settings.background | md5 -%}
+
+<div class="section-spacing color-scheme color-scheme--{{ section.settings.color_scheme.id }} color-scheme--bg-{{ color_scheme_hash }}"
+  dir="ltr">
+  <link-bar class="link-bar">
+    <div class="container" style="">
+      <div class="link-bar__wrapper">
+        <span class="link-bar__title">
+          {{ section.settings.title_override | default: section.settings.quick_links.title | upcase }}
+        </span>
+
+        <div class="link-bar__scroller hide-scrollbar">
+          <ul class="link-bar__linklist list--unstyled" role="list">
+            {% for link in section.settings.quick_links.links %}
+            <li class="link-bar__link-item ">
+              <a class="link--animated {% if link.active %}link-active{% endif %}" href="{{ link.url }}">
+                {{ link.title }}
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </link-bar>
+
+  {% comment %}
+  <div class="container">
+    <quick-links>
+      <ul>
+        <li>{{ section.settings.title_override | default: section.settings.quick_links.title | upcase }}</li>
+        {% for link in section.settings.quick_links.links %}
+        <li>
+          <a class="link{% if link.active %} active{% endif %}" href="{{ link.url }}">
+            {{ link.title }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </quick-links>
+  </div>
+  {% endcomment %}
+</div>
+
+{% schema %}
+{
+  "name": "Quick Links",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:global.colors.scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Section Padding",
+      "min": 0,
+      "max": 400,
+      "step": 5,
+      "default": 50,
+      "unit": "px"
+    },
+    {
+      "type": "link_list",
+      "id": "quick_links",
+      "label": "Quick Links"
+    },
+    {
+      "type": "text",
+      "id": "title_override",
+      "label": "Title Override"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Quick Links",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "section_padding": 0
+      }
+    }
+  ]
+}
+{% endschema %}
