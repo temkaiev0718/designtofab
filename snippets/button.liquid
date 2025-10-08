@@ -102,6 +102,8 @@ Supported variables
 
     if external and href != blank
       echo ' target="_blank"'
+    elsif enable_new_tab == true
+      echo ' target="_blank"'
     endif
 
     if focusable == false

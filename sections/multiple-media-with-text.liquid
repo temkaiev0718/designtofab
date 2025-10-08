@@ -128,11 +128,11 @@
             {%- if section.settings.button_1_text != blank or section.settings.button_2_text != blank -%}
               <div class="button-group">
                 {%- if section.settings.button_1_text != blank -%}
-                  {%- render 'button', href: section.settings.button_1_link, content: section.settings.button_1_text, style: section.settings.button_1_style -%}
+                  {%- render 'button', href: section.settings.button_1_link, content: section.settings.button_1_text, style: section.settings.button_1_style, enable_new_tab : section.settings.open_links_in_new_tab -%}
                 {%- endif -%}
 
                 {%- if section.settings.button_2_text != blank -%}
-                  {%- render 'button', href: section.settings.button_2_link, content: section.settings.button_2_text, style: section.settings.button_2_style -%}
+                  {%- render 'button', href: section.settings.button_2_link, content: section.settings.button_2_text, style: section.settings.button_2_style, enable_new_tab : section.settings.open_links_in_new_tab -%}
                 {%- endif -%}
               </div>
             {%- endif -%}
@@ -170,6 +170,17 @@
       "id": "separate_section_with_border",
       "label": "t:global.section.separate_section_with_border",
       "default": true
+    },
+    {
+      "type": "header",
+      "content": "Link behavior"
+    },
+    {
+      "type": "checkbox",
+      "id": "open_links_in_new_tab",
+      "label": "Open links in new tab",
+      "info": "When enabled, all links will open in a new browser tab",
+      "default": false
     },
     {
       "type": "header",
