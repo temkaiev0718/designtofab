@@ -73,6 +73,19 @@
             "modal_content": "<p>Weathering steel has a protective layer that will oxidise to a rust-like finish when exposed to weather in most conditions. The product will self-seal to provide durability and corrosion resistance, creating a natural, warm, earthy rustic appearance over time to compliment every home or garden space.<br\/><br\/>Things you should know about your product; <br\/><br\/>We go to great efforts to pre-weather our stock items. On occasions, due to stock availability, items may not be pre-weathered prior to shipping. This also applies to custom orders. Freshly laser cut items will be raw steel (grey metal in colour). Rest assured, the steel will rust when exposed to moisture, that’s what its designed to do. <br\/><\/p><p>Product colour variations happen. This is due to different sourced material, age and stage of natural rusting as well as natural effects during pre-weathering such as falling blossoms or leaves during storms. <br\/><\/p><p>During the early stages of weathering, rust residue may stain surfaces. Remember this during placement of your product. Use a tile or similar on a flat surface to avoid disappointment. Standoffs on a wall for signage are advisable to avoid rust stains venturing down your wall. <br\/><\/p><p>Depending on your climate, your product may benefit from a light mist of water daily, to achieve maximum rusting effect. It will rust quicker in a horizontal position. Leaves or other items resting on the product when it is wet may leave short term marks until the product seals. <br\/><\/p><p>Be patient as the rusting process does take time. It may may take up to 18 months to self-seal, depending on your climate and how often the surface is wet\/dry. <br\/><\/p><p>If you don’t want your product to rust, Penetrol (available from hardware or paint stores) can be applied as a rust preventative every 6 months. This product penetrates the pores of steel and prevents moisture and oxygen from causing rust, it may slow (not stop) the rusting process of weathering steel. <br\/><\/p>"
           }
         },
+        "drawer_g99EY6": {
+          "type": "drawer",
+          "settings": {
+            "button_title": "Product Material Important Information",
+            "button_style": "link",
+            "stretch_button": false,
+            "button_background": "",
+            "button_text_color": "",
+            "drawer_position": "right",
+            "drawer_title": "Product Care",
+            "drawer_content": "<p>Write some conteWeathering steel has a protective layer that will oxidise to a rust-like finish when exposed to weather in most conditions. The product will self-seal to provide durability and corrosion resistance, creating a natural, warm, earthy rustic appearance over time to compliment every home or garden space.<br\/><br\/>Things you should know about your product; <br\/><br\/>We go to great efforts to pre-weather our stock items. On occasions, due to stock availability, items may not be pre-weathered prior to shipping. This also applies to custom orders. Freshly laser cut items will be raw steel (grey metal in colour). Rest assured, the steel will rust when exposed to moisture, that’s what its designed to do. <br\/><\/p><p>Product colour variations happen. This is due to different sourced material, age and stage of natural rusting as well as natural effects during pre-weathering such as falling blossoms or leaves during storms. <br\/><\/p><p>During the early stages of weathering, rust residue may stain surfaces. Remember this during placement of your product. Use a tile or similar on a flat surface to avoid disappointment. Standoffs on a wall for signage are advisable to avoid rust stains venturing down your wall. <br\/><\/p><p>Depending on your climate, your product may benefit from a light mist of water daily, to achieve maximum rusting effect. It will rust quicker in a horizontal position. Leaves or other items resting on the product when it is wet may leave short term marks until the product seals. <br\/><\/p><p>Be patient as the rusting process does take time. It may may take up to 18 months to self-seal, depending on your climate and how often the surface is wet\/dry. <br\/><\/p><p>If you don’t want your product to rust, Penetrol (available from hardware or paint stores) can be applied as a rust preventative every 6 months. This product penetrates the pores of steel and prevents moisture and oxygen from causing rust, it may slow (not stop) the rusting process of weathering steel. <br\/>nt that will appear in a drawer<\/p>"
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -144,6 +157,7 @@
         "text_CPfjz7",
         "description",
         "modal_zBxtM7",
+        "drawer_g99EY6",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
