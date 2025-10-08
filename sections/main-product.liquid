@@ -337,6 +337,93 @@ quick buy information in a template, that will be extracted in JS, which ensures
       "type": "@app"
     },
     {
+      "type": "drawer",
+      "name": "t:sections.main_product.blocks.drawer.name",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "t:sections.main_product.blocks.drawer.instructions"
+        },
+        {
+          "type": "header",
+          "content": "Button"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "button_title",
+          "label": "t:global.text.button_text",
+          "default": "Button title"
+        },
+        {
+          "type": "select",
+          "id": "button_style",
+          "label": "t:global.text.style",
+          "options": [
+            {
+              "value": "outline",
+              "label": "t:global.text.link_style_options.outline"
+            },
+            {
+              "value": "solid",
+              "label": "t:global.text.link_style_options.solid"
+            },
+            {
+              "value": "link",
+              "label": "t:global.text.link_style_options.link"
+            }
+          ],
+          "default": "solid"
+        },
+        {
+          "type": "checkbox",
+          "id": "stretch_button",
+          "label": "t:sections.main_product.blocks.button.stretch"
+        },
+        {
+          "type": "color",
+          "id": "button_background",
+          "label": "t:global.colors.background"
+        },
+        {
+          "type": "color",
+          "id": "button_text_color",
+          "label": "t:global.colors.text"
+        },
+        {
+          "type": "select",
+          "id": "drawer_position",
+          "label": "t:sections.main_product.blocks.drawer.drawer_position",
+          "options": [
+            {
+              "value": "left",
+              "label": "t:global.position.left"
+            },
+            {
+              "value": "right",
+              "label": "t:global.position.right"
+            }
+          ],
+          "default": "right"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.main_product.blocks.drawer.drawer_category"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "drawer_title",
+          "label": "t:sections.main_product.blocks.drawer.drawer_title",
+          "default": "Drawer title"
+        },
+        {
+          "type": "richtext",
+          "id": "drawer_content",
+          "label": "t:sections.main_product.blocks.drawer.drawer_content",
+          "default": "<p>Write some content that will appear in a drawer</p>"
+        }
+      ]
+    },
+    {
       "type": "vendor",
       "name": "t:sections.main_product.blocks.vendor.name",
       "limit": 1

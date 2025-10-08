@@ -1300,6 +1300,14 @@
           "modal_title": "Title",
           "modal_content": "Content"
         },
+        "drawer": {
+          "name": "Drawer",
+          "instructions": "Show secondary information in a side drawer with animation.",
+          "drawer_category": "Drawer",
+          "drawer_title": "Title",
+          "drawer_content": "Content",
+          "drawer_position": "Drawer position"
+        },
         "image": {
           "name": "Image"
         },

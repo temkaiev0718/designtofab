@@ -495,6 +495,21 @@ Supported variables
               </x-modal>
             {%- endif -%}
 
+          {%- when 'drawer' -%}
+            {%- if block.settings.button_title != blank and block.settings.drawer_content != blank -%}
+              {%- assign drawer_id = product_form_id | append: block.id -%}
+
+              {%- render 'button', content: block.settings.button_title, aria_controls: drawer_id, style: block.settings.button_style, stretch: block.settings.stretch_button, background: block.settings.button_background, text_color: block.settings.button_text_color -%}
+
+              <x-drawer id="{{ drawer_id | escape }}" class="drawer color-scheme color-scheme--dialog" open-from="{{ block.settings.drawer_position }}">
+                <span class="h5" slot="header">{{ block.settings.drawer_title }}</span>
+
+                <div class="prose">
+                  {{- block.settings.drawer_content -}}
+                </div>
+              </x-drawer>
+            {%- endif -%}
+            
           {%- when 'image' -%}
             {%- if block.settings.image != blank -%}
               {%- capture image_style_attribute -%}{% if block.settings.alignment == 'center' %}margin-inline: auto;{% elsif block.settings.alignment == 'end' %}margin-inline-start: auto;{% endif %}{%- endcapture -%}
