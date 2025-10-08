@@ -1,0 +1,191 @@
+{
+  "sections": {
+    "dac_slideshow_swiper_GQiLmf": {
+      "type": "dac-slideshow-swiper",
+      "blocks": {
+        "image_GfVV9z": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Social-image.jpg",
+            "content_position": "overlay",
+            "subheading": "",
+            "title": "Product Care",
+            "title_2": "",
+            "content": "",
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_text_position": "sm:place-self-center sm:text-center",
+            "content_max_width": 780,
+            "button_1_text": "",
+            "button_1_link": "",
+            "button_1_style": "solid",
+            "button_1_background": "#ed7325",
+            "button_1_text_color": "#ffffff",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_style": "outline",
+            "button_2_background": "#ffffff",
+            "button_2_text_color": "#000000",
+            "background": "",
+            "background_opacity": 50,
+            "text_color": "#ffffff",
+            "border_color": "",
+            "gradient_overlay": "linear-gradient(180deg, rgba(54, 54, 54, 0.2), rgba(4, 4, 4, 0.1) 100%)"
+          }
+        },
+        "video_QyqLpV": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "video": "shopify:\/\/files\/videos\/AdobeStock_442177005.mp4",
+            "allow_sound": false,
+            "content_position": "overlay",
+            "subheading": "Design to Fab",
+            "title": "Inspired by Nature",
+            "title_2": "Crafted with Soul",
+            "content": "",
+            "mobile_text_position": "place-self-end-start text-start",
+            "desktop_text_position": "sm:place-self-end-start sm:text-start",
+            "content_max_width": 780,
+            "button_1_text": "Our Story →",
+            "button_1_link": "shopify:\/\/pages\/our-story",
+            "button_1_style": "solid",
+            "button_1_background": "#ed7325",
+            "button_1_text_color": "#ffffff",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_style": "outline",
+            "button_2_background": "#ffffff",
+            "button_2_text_color": "#000000",
+            "background": "",
+            "background_opacity": 50,
+            "text_color": "#ffffff",
+            "border_color": "",
+            "gradient_overlay": "linear-gradient(180deg, rgba(54, 54, 54, 0.47) 1%, rgba(4, 4, 4, 0) 99%)"
+          }
+        }
+      },
+      "block_order": [
+        "image_GfVV9z",
+        "video_QyqLpV"
+      ],
+      "name": "Swiper Slideshow (DAC)",
+      "settings": {
+        "color_scheme": "",
+        "allow_transparent_header": true,
+        "show_next_section_button": false,
+        "media_size": "auto",
+        "enable_custom_height": true,
+        "container_height_mob": "40",
+        "container_height_desk": "60",
+        "container_width": false,
+        "show_initial_transition": false,
+        "autoplay": true,
+        "autoplay_pause_on_video": true,
+        "cycle_speed": 5,
+        "background": "#000000",
+        "controls_color": "#ffffff"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "color_scheme": "",
+        "show_title": true,
+        "page_width": "xs"
+      }
+    },
+    "faq_VgYexY": {
+      "type": "faq",
+      "blocks": {
+        "question_VayAmX": {
+          "type": "question",
+          "settings": {
+            "question": "<strong>What is weathering steel?<\/strong>",
+            "answer": "<p>Weathering steel forms a protective layer that naturally oxidises when exposed to the elements. This creates a warm, rust-like finish that seals itself over time, providing strength and corrosion resistance. It develops a natural, earthy patina that suits any garden or outdoor space.<\/p>"
+          }
+        },
+        "question_cwKMRj": {
+          "type": "question",
+          "settings": {
+            "question": "<strong>Will my product arrive pre-rusted?<\/strong>",
+            "answer": "<p>We go to great effort to pre-weather our stock items, but occasionally, due to availability, some products may be sent in raw steel (grey in colour). Don’t worry — the steel will begin to rust once it’s exposed to moisture, which is exactly what it’s designed to do.<\/p>"
+          }
+        },
+        "question_YtQLU8": {
+          "type": "question",
+          "settings": {
+            "question": "<strong>Why do colour variations occur?<\/strong>",
+            "answer": "<p>Each piece is unique. Variations in tone and texture are part of the natural rusting process and depend on the steel’s source, age, and weather conditions during pre-weathering.<\/p>"
+          }
+        },
+        "question_7trfqd": {
+          "type": "question",
+          "settings": {
+            "question": "<strong>How long does it take to rust?<\/strong>",
+            "answer": "<p>Rusting begins quite quickly once exposed to moisture, but it can take up to 18 months for the surface to fully self-seal. Climate and exposure to rain or humidity will affect how fast the patina develops.<\/p>"
+          }
+        },
+        "question_ax4zRp": {
+          "type": "question",
+          "settings": {
+            "question": "<strong>How can I speed up the rusting process?<\/strong>",
+            "answer": "<p>Lightly mist the surface with water each day to encourage an even rusting effect. Rust forms more quickly when the piece is lying flat or exposed to consistent moisture.<\/p>"
+          }
+        },
+        "question_8EDBki": {
+          "type": "question",
+          "settings": {
+            "question": "<strong>Will rust stain surrounding surfaces?<\/strong>",
+            "answer": "<p>In the early stages of weathering, rust residue may stain walls, tiles, or concrete. We recommend using standoffs for wall-mounted pieces and placing garden items on tiles or pavers to prevent staining.<\/p>"
+          }
+        },
+        "question_F9f3TW": {
+          "type": "question",
+          "settings": {
+            "question": "<strong>Can I stop my piece from rusting?<\/strong>",
+            "answer": "<p>If you prefer a raw steel look, you can slow the rusting process by applying a product such as <em>Penetrol<\/em> (available from hardware or paint stores) every six months. It penetrates the steel to help prevent moisture and oxygen from causing rust.<\/p>"
+          }
+        },
+        "question_PmTwT4": {
+          "type": "question",
+          "settings": {
+            "question": "<strong>Do you offer custom designs?<\/strong>",
+            "answer": "<p>Yes, we can tailor pieces to your size, shape, or design preferences. Get in touch to discuss your ideas and we’ll bring them to life.<\/p>"
+          }
+        },
+        "question_gU73fP": {
+          "type": "question",
+          "settings": {
+            "question": "<strong>Can your pieces be displayed outdoors?<\/strong>",
+            "answer": "<p>Absolutely. Our products are designed for outdoor conditions. Once the steel has sealed, it forms a protective layer that’s ideal for gardens, courtyards, and exterior walls.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "question_VayAmX",
+        "question_cwKMRj",
+        "question_YtQLU8",
+        "question_7trfqd",
+        "question_ax4zRp",
+        "question_8EDBki",
+        "question_F9f3TW",
+        "question_PmTwT4",
+        "question_gU73fP"
+      ],
+      "name": "t:sections.faq.presets.faq.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": false,
+        "show_categories": false,
+        "subheading": "Need help?",
+        "title": "Frequently Asked Questions",
+        "content": ""
+      }
+    }
+  },
+  "order": [
+    "dac_slideshow_swiper_GQiLmf",
+    "main",
+    "faq_VgYexY"
+  ]
+}

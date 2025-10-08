@@ -9,10 +9,16 @@
         "show_cart_note": true,
         "allow_discount_application": false,
         "show_shipping_text": true,
-        "show_view_cart_button": false,
+        "show_view_cart_button": true,
         "show_checkout_button": true,
         "show_price_in_checkout_button": true,
-        "cross_sell_products": [],
+        "cross_sell_products": [
+          "bee-kind-sign",
+          "bees-native-flowers-large-wall-circle",
+          "warratah-and-butterflies-sign",
+          "brahman-bull-medium-wall-circle",
+          "hummingbird-protea-medium-wall-circle"
+        ],
         "cross_sell_title": "Complete with",
         "cross_sell_stack_products": false
       }

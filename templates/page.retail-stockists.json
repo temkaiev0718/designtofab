@@ -1,0 +1,298 @@
+{
+  "sections": {
+    "dac_slideshow_swiper_GQiLmf": {
+      "type": "dac-slideshow-swiper",
+      "blocks": {
+        "image_GfVV9z": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/imgi_1_70630286_136582921023546_2374949384689426312_n_9decfcd2-91bb-491c-9b43-ab5a24d0294a.jpg",
+            "content_position": "overlay",
+            "subheading": "",
+            "title": "{{ page.title }}",
+            "title_2": "",
+            "content": "",
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_text_position": "sm:place-self-center sm:text-center",
+            "content_max_width": 780,
+            "button_1_text": "",
+            "button_1_link": "",
+            "button_1_style": "solid",
+            "button_1_background": "#ed7325",
+            "button_1_text_color": "#ffffff",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_style": "outline",
+            "button_2_background": "#ffffff",
+            "button_2_text_color": "#000000",
+            "background": "",
+            "background_opacity": 50,
+            "text_color": "#ffffff",
+            "border_color": "",
+            "gradient_overlay": "linear-gradient(180deg, rgba(54, 54, 54, 0.2), rgba(4, 4, 4, 0.1) 100%)"
+          }
+        },
+        "video_QyqLpV": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "video": "shopify:\/\/files\/videos\/AdobeStock_442177005.mp4",
+            "allow_sound": false,
+            "content_position": "overlay",
+            "subheading": "Design to Fab",
+            "title": "Inspired by Nature",
+            "title_2": "Crafted with Soul",
+            "content": "",
+            "mobile_text_position": "place-self-end-start text-start",
+            "desktop_text_position": "sm:place-self-end-start sm:text-start",
+            "content_max_width": 780,
+            "button_1_text": "Our Story →",
+            "button_1_link": "shopify:\/\/pages\/our-story",
+            "button_1_style": "solid",
+            "button_1_background": "#ed7325",
+            "button_1_text_color": "#ffffff",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_style": "outline",
+            "button_2_background": "#ffffff",
+            "button_2_text_color": "#000000",
+            "background": "",
+            "background_opacity": 50,
+            "text_color": "#ffffff",
+            "border_color": "",
+            "gradient_overlay": "linear-gradient(180deg, rgba(54, 54, 54, 0.47) 1%, rgba(4, 4, 4, 0) 99%)"
+          }
+        }
+      },
+      "block_order": [
+        "image_GfVV9z",
+        "video_QyqLpV"
+      ],
+      "name": "Swiper Slideshow (DAC)",
+      "settings": {
+        "color_scheme": "",
+        "allow_transparent_header": true,
+        "show_next_section_button": false,
+        "media_size": "auto",
+        "enable_custom_height": true,
+        "container_height_mob": "40",
+        "container_height_desk": "60",
+        "container_width": false,
+        "show_initial_transition": false,
+        "autoplay": true,
+        "autoplay_pause_on_video": true,
+        "cycle_speed": 5,
+        "background": "#000000",
+        "controls_color": "#ffffff"
+      }
+    },
+    "dac_heading_rich_text_fNPF7M": {
+      "type": "dac-heading-rich-text",
+      "blocks": {
+        "heading_EiVgAp": {
+          "type": "heading",
+          "settings": {
+            "text": "<strong>Our Valued Retail Stockists<\/strong>",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext_jpb8fj": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p><\/p><p>We are proud to partner with a network of exceptional local stockists throughout the New England and Northern Tablelands region and welcome new stockist enquiries.<\/p><p>Our stockists feature a <strong>vast array<\/strong> of unique <strong>vintage and artisan homewares<\/strong>. They don't just sell goods; they share our passion for authentic, artisan goods and actively champion the work of local makers. When you purchase our designs from one of these valued partners, you're not just supporting our brand; you're investing in the vibrant creative community and culture of these regions.<\/p><p>Find a Design to Fab piece at a location near you!<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_EiVgAp",
+        "richtext_jpb8fj"
+      ],
+      "custom_css": [
+        ".container {font-size: 16px; padding-top: 2rem; padding-bottom: 2rem;}"
+      ],
+      "name": "t:sections.rich_text.presets.rich_text.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": false,
+        "content_width": "sm",
+        "text_position": "center",
+        "remove_vertical_spacing": false,
+        "custom_class": ""
+      }
+    },
+    "multiple_media_with_text_FnJfX4": {
+      "type": "multiple-media-with-text",
+      "blocks": {
+        "image_VbTRhL": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2025_Business_Directory_COVER.webp",
+            "rotation": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_VbTRhL"
+      ],
+      "custom_css": [
+        ".container {font-size: 16px; padding-top: 4rem; padding-bottom: 4rem; --container-max-width: 65%;}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-9362f68e-7e7e-4a23-ac40-a5d1adbe3f38",
+        "reveal_on_scroll": true,
+        "separate_section_with_border": false,
+        "media_position_desktop": "after_text",
+        "media_position_mobile": "before_text",
+        "media_layout": "overlap",
+        "media_alignment": "end",
+        "media_alignment_offset": 80,
+        "media_mobile_alignment_offset": 40,
+        "text_alignment": "center",
+        "subheading": "",
+        "title": "<strong>SEASONS of New England<\/strong>",
+        "content": "<p>31 Salisbury St, Uralla NSW 2358<br\/><br\/><strong>Celebrating the products and people of the New England region has been at the heart of the Seasons of New England purpose since 2014.<\/strong> What began as a highly successful annual Expo (now drawing over 7,000 visitors) has evolved into a multi-platform business.<\/p><p>They now operate an online store, a popular retail space in Uralla, and a growing corporate hamper network. They actively support local small businesses, artisans, and producers by featuring a vast array of changing and evolving<strong> artisan goods<\/strong>, with a core mission to raise the profile of the region across Australia.<\/p>",
+        "button_1_text": "Website",
+        "button_1_link": "https:\/\/seasonsofnewengland.com.au",
+        "button_1_style": "solid",
+        "button_2_text": "Location",
+        "button_2_link": "https:\/\/maps.app.goo.gl\/KV4498TT5aM4TsAJ9",
+        "button_2_style": "solid"
+      }
+    },
+    "multiple_media_with_text_Fr44dT": {
+      "type": "multiple-media-with-text",
+      "blocks": {
+        "image_iePDJt": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/imgi_21_555539457_17984887160887196_464951530205106154_n.jpg",
+            "rotation": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_iePDJt"
+      ],
+      "custom_css": [
+        ".container {font-size: 16px; padding-top: 4rem; padding-bottom: 4rem; --container-max-width: 65%;}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "reveal_on_scroll": true,
+        "separate_section_with_border": false,
+        "media_position_desktop": "before_text",
+        "media_position_mobile": "before_text",
+        "media_layout": "overlap",
+        "media_alignment": "end",
+        "media_alignment_offset": 80,
+        "media_mobile_alignment_offset": 40,
+        "text_alignment": "center",
+        "subheading": "",
+        "title": "<strong>The Clique Curation<\/strong>",
+        "content": "<p>160 Beardy St, Armidale NSW 2350<br\/><br\/>Discover a <strong>curated collection of unique handcrafted gifts and wares<\/strong> from local and regional artisans, creators, and producers. We are a collective of micro-businesses, collaborating and sharing a single space, proving that <strong>together, we are more than the sum of our parts. <\/strong>Design to Fab are proud to be one of Clique’s collective collaborators!<\/p>",
+        "button_1_text": "Website",
+        "button_1_link": "https:\/\/thecliquecuration.square.site\/",
+        "button_1_style": "solid",
+        "button_2_text": "Location",
+        "button_2_link": "https:\/\/maps.app.goo.gl\/PjB6hdLgQr1amD2w6",
+        "button_2_style": "solid"
+      }
+    },
+    "multiple_media_with_text_VXbECL": {
+      "type": "multiple-media-with-text",
+      "blocks": {
+        "image_6rA8kx": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/imgi_21_555539457_17984887160887196_464951530205106154_n_2b41c58b-946c-4897-ba08-8706660d7a3c.jpg",
+            "rotation": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_6rA8kx"
+      ],
+      "custom_css": [
+        ".container {font-size: 16px; padding-top: 4rem; padding-bottom: 4rem; --container-max-width: 65%;}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-9362f68e-7e7e-4a23-ac40-a5d1adbe3f38",
+        "reveal_on_scroll": true,
+        "separate_section_with_border": false,
+        "media_position_desktop": "after_text",
+        "media_position_mobile": "before_text",
+        "media_layout": "overlap",
+        "media_alignment": "end",
+        "media_alignment_offset": 80,
+        "media_mobile_alignment_offset": 40,
+        "text_alignment": "center",
+        "subheading": "",
+        "title": "<strong>Unique Rustique<\/strong>",
+        "content": "<p>118 George Street, Quirindi NSW 2343<br\/><br\/>Unique Rustiquein Quirindi, NSW, is an <strong>eclectic haven for treasure hunters<\/strong>. We offer a curated collection of antiques, vintage finds, vinyl records, second-hand treasures, and new homewares, all while proudly supporting <strong>local artisans<\/strong>. Come for the nostalgia; stay for the shopping therapy!<\/p>",
+        "button_1_text": "",
+        "button_1_link": "https:\/\/thecliquecuration.square.site\/",
+        "button_1_style": "solid",
+        "button_2_text": "Location",
+        "button_2_link": "https:\/\/maps.app.goo.gl\/6BQb9jhuKchpLnLM8",
+        "button_2_style": "solid"
+      }
+    },
+    "multiple_media_with_text_gX3Pbw": {
+      "type": "multiple-media-with-text",
+      "blocks": {
+        "image_TjWLBG": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/imgi_24_AC9h4nqIAWoXMZRVAGuhw1whgemrmskBYOTBrtIfEjW3K1JCkew-QtD2pryB5Wj_JBbJPoN8p-4D8jIxqvNoPW35dYHwnT5Id2SIQqt5OCux4jhmAbdHEpaLpnNS4htKn2XvkHnoQMkwHw_s773-k-no.jpg",
+            "rotation": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_TjWLBG"
+      ],
+      "custom_css": [
+        ".container {font-size: 16px; padding-top: 4rem; padding-bottom: 4rem; --container-max-width: 65%;}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "reveal_on_scroll": true,
+        "separate_section_with_border": false,
+        "media_position_desktop": "before_text",
+        "media_position_mobile": "before_text",
+        "media_layout": "overlap",
+        "media_alignment": "end",
+        "media_alignment_offset": 80,
+        "media_mobile_alignment_offset": 40,
+        "text_alignment": "center",
+        "subheading": "",
+        "title": "<strong>Iron & Sage<\/strong>",
+        "content": "<p>20 New England Highway, Willow Tree NSW 2339<br\/><br\/>Located right on the highway in the gorgeous little town of <strong>Willow Tree<\/strong>, we are your must-stop for gifts and homewares. Pop in to discover a wide range of beautiful new items, unique vintage treasures, and a focus on <strong>supporting locally made products<\/strong>. Break up your journey with some retail therapy, and grab a seriously <strong>great coffee<\/strong> to go!<\/p>",
+        "button_1_text": "",
+        "button_1_link": "https:\/\/thecliquecuration.square.site\/",
+        "button_1_style": "solid",
+        "button_2_text": "Location",
+        "button_2_link": "https:\/\/maps.app.goo.gl\/gAxa7QduKcxx66T27",
+        "button_2_style": "solid"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "show_title": true,
+        "page_width": "xs"
+      }
+    }
+  },
+  "order": [
+    "dac_slideshow_swiper_GQiLmf",
+    "dac_heading_rich_text_fNPF7M",
+    "multiple_media_with_text_FnJfX4",
+    "multiple_media_with_text_Fr44dT",
+    "multiple_media_with_text_VXbECL",
+    "multiple_media_with_text_gX3Pbw",
+    "main"
+  ]
+}

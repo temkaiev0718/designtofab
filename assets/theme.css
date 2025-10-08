@@ -7971,3 +7971,12 @@ ul {
 header.difference x-header {
   background-color : transparent!important;
 }
+
+
+.header .mega-menu ul.mega-menu__linklist {
+  flex : 1;
+}
+
+body .header .h6 {
+  font-size : 15px;
+}

@@ -2,6 +2,80 @@
   "type": "footer",
   "name": "Footer group",
   "sections": {
+    "dac_heading_rich_text_ncp9er": {
+      "type": "dac-heading-rich-text",
+      "blocks": {
+        "heading_8NQpbF": {
+          "type": "heading",
+          "settings": {
+            "text": "Follow us <a href=\"https:\/\/www.instagram.com\/designtofab\/\" target=\"_blank\">@designtofab<\/a>",
+            "heading_tag": "h3"
+          }
+        }
+      },
+      "block_order": [
+        "heading_8NQpbF"
+      ],
+      "custom_css": [
+        ".instafeed-app-heading {padding: 0 16px 30px 16px;}"
+      ],
+      "name": "t:sections.rich_text.presets.rich_text.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": false,
+        "content_width": "sm",
+        "text_position": "center",
+        "remove_vertical_spacing": false,
+        "custom_class": "instafeed-app-heading"
+      }
+    },
+    "175988282466b080c0": {
+      "type": "apps",
+      "blocks": {
+        "instafeed_app_block_nETEAR": {
+          "type": "shopify:\/\/apps\/instafeed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "title": "",
+            "title_color": "",
+            "title_size_v2": 0,
+            "alignment": "center",
+            "instafeed_margin_top": 0,
+            "instafeed_margin_bottom": 0,
+            "instafeed_margin_sides": 0,
+            "show_instagram_link": false,
+            "link_alignment": "left",
+            "link_color": "#000000",
+            "background_color": "",
+            "feed_id": "",
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "instafeed_app_block_nETEAR"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": false,
+        "remove_vertical_spacing": true,
+        "remove_horizontal_spacing": true
+      }
+    },
+    "newsletter_zf96nD": {
+      "type": "newsletter",
+      "settings": {
+        "color_scheme": "scheme-090efca9-322e-46ea-95a9-3aed0f0e4100",
+        "separate_section_with_border": false,
+        "image_size": "md",
+        "image": "shopify:\/\/shop_images\/imgi_36_488170987_1196450932483107_1273195842749300193_n.jpg",
+        "subheading": "Keep me updated",
+        "title": "Newsletter",
+        "content": "<p>Subscribe to get notified about product launches, special offers and company news.<\/p>",
+        "button_text": "Subscribe",
+        "overlay_color": "#000000",
+        "overlay_opacity": 40
+      }
+    },
     "text-with-icons": {
       "type": "text-with-icons",
       "blocks": {
@@ -77,7 +151,7 @@
           "type": "text",
           "settings": {
             "title": "Design to Fab",
-            "content": "<h5>Inspired by nature. Forged by hand.<\/h5><p>We create rustic metal art pieces that bring warmth, texture and storytelling into your home and garden. Each design is laser cut and hand finished in regional NSW – crafted to last, designed to connect.<\/p>",
+            "content": "<h5>Inspired by nature. Crafted with Soul<\/h5><p>We create rustic metal art pieces that bring warmth, texture and storytelling into your home and garden. Each design is laser cut and hand finished in regional NSW – crafted to last, designed to connect.<\/p>",
             "enable_follow_on_shop": true
           }
         },
@@ -127,6 +201,9 @@
     }
   },
   "order": [
+    "dac_heading_rich_text_ncp9er",
+    "175988282466b080c0",
+    "newsletter_zf96nD",
     "text-with-icons",
     "footer"
   ]

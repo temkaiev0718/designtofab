@@ -3,14 +3,14 @@
     "collection-banner": {
       "type": "collection-banner",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-2",
         "image_size": "auto",
         "allow_transparent_header": true,
         "show_image": true,
         "reveal": true,
         "enable_parallax": true,
         "show_collection_title": true,
-        "show_collection_description": true,
+        "show_collection_description": false,
         "show_breadcrumb": true,
         "content_width": "xs",
         "overlay_color": "#000000",
@@ -37,10 +37,106 @@
         "show_filter_values_count": true,
         "open_filters_by_default": false
       }
+    },
+    "multiple_media_with_text_xdTPHc": {
+      "type": "multiple-media-with-text",
+      "blocks": {
+        "image_MVEE6z": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/imgi_28_493219723_1218492643612269_1424724961272305666_n.jpg",
+            "rotation": 0
+          }
+        },
+        "image_8AALcb": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Dachshund_sitting_garden.jpg",
+            "rotation": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_MVEE6z",
+        "image_8AALcb"
+      ],
+      "custom_css": [
+        ".container {font-size: 18px; padding-top: 4rem; padding-bottom: 4rem; --container-max-width: 65%;}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-9362f68e-7e7e-4a23-ac40-a5d1adbe3f38",
+        "reveal_on_scroll": true,
+        "separate_section_with_border": false,
+        "media_position_desktop": "after_text",
+        "media_position_mobile": "before_text",
+        "media_layout": "overlap",
+        "media_alignment": "end",
+        "media_alignment_offset": 80,
+        "media_mobile_alignment_offset": 40,
+        "text_alignment": "center",
+        "subheading": "Inspired by Nature - Crafted with Soul",
+        "title": "Our Story",
+        "content": "<p>We're Jason and Karen Balsar, the husband-and-wife team who founded Design to Fab in 2018. <br\/><br\/>The company started simply with creating sculptural pieces from found metal objects for our own garden, and quickly became the ideal combination of Karen's artistic vision and Jason's extensive, hands-on knowledge of the metal and manufacturing industry.<\/p>",
+        "button_1_text": "Read more",
+        "button_1_link": "shopify:\/\/pages\/our-story",
+        "button_1_style": "link",
+        "button_2_text": "",
+        "button_2_link": "",
+        "button_2_style": "solid"
+      }
+    },
+    "multiple_media_with_text_fPYepg": {
+      "type": "multiple-media-with-text",
+      "blocks": {
+        "image_hN3Rgp": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/imgi_16_Design_to_Fab-Market_pic_1_3ff14c99-900a-46d6-9941-88b431bbb082.jpg",
+            "rotation": 0
+          }
+        },
+        "image_HMkaee": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/imgi_47_121146322_1016721858845352_279520353408672517_n.webp",
+            "rotation": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_hN3Rgp",
+        "image_HMkaee"
+      ],
+      "custom_css": [
+        ".container {font-size: 18px; padding-top: 4rem; padding-bottom: 4rem; --container-max-width: 65%;}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "reveal_on_scroll": true,
+        "separate_section_with_border": false,
+        "media_position_desktop": "before_text",
+        "media_position_mobile": "before_text",
+        "media_layout": "overlap",
+        "media_alignment": "end",
+        "media_alignment_offset": 80,
+        "media_mobile_alignment_offset": 40,
+        "text_alignment": "center",
+        "subheading": "",
+        "title": "Boutique Markets & Retail Store Stockists",
+        "content": "<p>You can find our handcrafted designs in select retail stores and boutique markets across New South Wales. Each location has been chosen for its shared appreciation of quality craftsmanship and design. <br\/><br\/>Whether you’re visiting a local gallery or exploring a weekend market, it’s a great way to experience our pieces up close and take home something truly unique.<\/p>",
+        "button_1_text": "Boutique Markets",
+        "button_1_link": "shopify:\/\/pages\/boutique-markets",
+        "button_1_style": "link",
+        "button_2_text": "Retail Stockists",
+        "button_2_link": "shopify:\/\/pages\/retail-stockists",
+        "button_2_style": "link"
+      }
     }
   },
   "order": [
     "collection-banner",
-    "main"
+    "main",
+    "multiple_media_with_text_xdTPHc",
+    "multiple_media_with_text_fPYepg"
   ]
 }

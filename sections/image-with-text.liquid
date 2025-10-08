@@ -9,6 +9,14 @@
     #shopify-section-{{ section.id }} {
       --image-with-text-content-max-width: {% if section.settings.content_width == 'sm' %}430px{% elsif section.settings.content_width == 'md' %}780px{% else %}100%{% endif %};
     }
+
+    {% if section.settings.enable_content_center == true %}
+      #shopify-section-{{ section.id }} .image-with-text .prose {
+        margin : auto;
+        padding-inline-start: var(--container-gutter);
+        padding-inline-end: var(--container-gutter);
+      }
+    {% endif %}
   </style>
 
   {%- comment -%}
@@ -108,6 +116,12 @@
       "type": "checkbox",
       "id": "separate_section_with_border",
       "label": "t:global.section.separate_section_with_border",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_content_center",
+      "label": "Content center",
       "default": true
     },
     {

@@ -1,5 +1,60 @@
 {
   "sections": {
+    "dac_slideshow_swiper_3dUBq7": {
+      "type": "dac-slideshow-swiper",
+      "blocks": {
+        "video_TQ8rBD": {
+          "type": "video",
+          "settings": {
+            "video": "shopify:\/\/files\/videos\/AdobeStock_442177005.mp4",
+            "allow_sound": false,
+            "content_position": "overlay",
+            "subheading": "Design to Fab",
+            "title": "Inspired by Nature",
+            "title_2": "Crafted with Soul",
+            "content": "",
+            "mobile_text_position": "place-self-end-start text-start",
+            "desktop_text_position": "sm:place-self-end-start sm:text-start",
+            "content_max_width": 780,
+            "button_1_text": "Shop Products →",
+            "button_1_link": "shopify:\/\/collections\/shop",
+            "button_1_style": "solid",
+            "button_1_background": "#ed7325",
+            "button_1_text_color": "#ffffff",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_style": "outline",
+            "button_2_background": "#ffffff",
+            "button_2_text_color": "#000000",
+            "background": "",
+            "background_opacity": 50,
+            "text_color": "#ffffff",
+            "border_color": "",
+            "gradient_overlay": "linear-gradient(180deg, rgba(54, 54, 54, 0.47) 1%, rgba(4, 4, 4, 0) 99%)"
+          }
+        }
+      },
+      "block_order": [
+        "video_TQ8rBD"
+      ],
+      "name": "Swiper Slideshow (DAC)",
+      "settings": {
+        "color_scheme": "",
+        "allow_transparent_header": true,
+        "show_next_section_button": false,
+        "media_size": "auto",
+        "enable_custom_height": true,
+        "container_height_mob": "70",
+        "container_height_desk": "95",
+        "container_width": false,
+        "show_initial_transition": false,
+        "autoplay": true,
+        "autoplay_pause_on_video": true,
+        "cycle_speed": 5,
+        "background": "#000000",
+        "controls_color": "#ffffff"
+      }
+    },
     "slideshow": {
       "type": "slideshow",
       "blocks": {
@@ -118,6 +173,7 @@
         "slide-1",
         "image_QAWhJi"
       ],
+      "disabled": true,
       "custom_css": [],
       "settings": {
         "allow_transparent_header": true,
@@ -129,6 +185,53 @@
         "cycle_speed": 5,
         "background": "#000000",
         "controls_color": "#ffffff"
+      }
+    },
+    "multiple_media_with_text_cFUNMh": {
+      "type": "multiple-media-with-text",
+      "blocks": {
+        "image_87J8M9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/imgi_28_493219723_1218492643612269_1424724961272305666_n.jpg",
+            "rotation": 0
+          }
+        },
+        "image_FimYqY": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Dachshund_sitting_garden.jpg",
+            "rotation": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_87J8M9",
+        "image_FimYqY"
+      ],
+      "custom_css": [
+        ".container {font-size: 18px; padding-top: 4rem; padding-bottom: 4rem; --container-max-width: 65%;}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-9362f68e-7e7e-4a23-ac40-a5d1adbe3f38",
+        "reveal_on_scroll": true,
+        "separate_section_with_border": false,
+        "media_position_desktop": "after_text",
+        "media_position_mobile": "before_text",
+        "media_layout": "overlap",
+        "media_alignment": "end",
+        "media_alignment_offset": 80,
+        "media_mobile_alignment_offset": 40,
+        "text_alignment": "center",
+        "subheading": "Inspired by Nature - Crafted with Soul",
+        "title": "Our Story",
+        "content": "<p>We're Jason and Karen Balsar, the husband-and-wife team who founded Design to Fab in 2018. <br\/><br\/>The company started simply with creating sculptural pieces from found metal objects for our own garden, and quickly became the ideal combination of Karen's artistic vision and Jason's extensive, hands-on knowledge of the metal and manufacturing industry.<\/p>",
+        "button_1_text": "Read more",
+        "button_1_link": "shopify:\/\/pages\/our-story",
+        "button_1_style": "link",
+        "button_2_text": "",
+        "button_2_link": "",
+        "button_2_style": "solid"
       }
     },
     "multiple-media-with-text": {
@@ -145,6 +248,7 @@
       "block_order": [
         "image-1"
       ],
+      "disabled": true,
       "custom_css": [
         ".container {font-size: 18px; padding-top: 4rem; padding-bottom: 4rem; --container-max-width: 65%;}"
       ],
@@ -173,40 +277,40 @@
     "featured-collections-1": {
       "type": "featured-collections",
       "blocks": {
-        "collection-1": {
-          "type": "collection",
-          "settings": {
-            "collection": "wall-art",
-            "products_count": 8,
-            "title": "Metal Garden Art",
-            "link_url": "shopify:\/\/collections\/all",
-            "link_text": "View more"
-          }
-        },
         "collection_C6Phg8": {
           "type": "collection",
           "settings": {
             "collection": "wall-art",
-            "products_count": 8,
+            "products_count": 16,
             "title": "Metal Wall Art",
-            "link_url": "shopify:\/\/collections\/all",
-            "link_text": "All men's bags"
+            "link_url": "shopify:\/\/collections\/wall-art",
+            "link_text": "View All"
+          }
+        },
+        "collection-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "garden-art",
+            "products_count": 16,
+            "title": "Metal Garden Art",
+            "link_url": "shopify:\/\/collections\/garden-art",
+            "link_text": "View All"
           }
         },
         "collection-2": {
           "type": "collection",
           "settings": {
-            "collection": "wall-art",
-            "products_count": 8,
+            "collection": "sign",
+            "products_count": 16,
             "title": "Metal Signs",
-            "link_url": "shopify:\/\/collections\/all",
-            "link_text": "All men's bags"
+            "link_url": "shopify:\/\/collections\/sign",
+            "link_text": "View All"
           }
         }
       },
       "block_order": [
-        "collection-1",
         "collection_C6Phg8",
+        "collection-1",
         "collection-2"
       ],
       "custom_css": [
@@ -264,25 +368,26 @@
         "remove_vertical_spacing": false
       }
     },
-    "slideshow_qPygRh": {
-      "type": "slideshow",
+    "dac_slideshow_swiper_pAiJbE": {
+      "type": "dac-slideshow-swiper",
       "blocks": {
-        "video_PbjWwN": {
-          "type": "video",
-          "disabled": true,
+        "image_BXp7hy": {
+          "type": "image",
           "settings": {
-            "video": "shopify:\/\/files\/videos\/AdobeStock_442177005.mp4",
-            "allow_sound": false,
-            "subheading": "<strong>Design to Fab<\/strong>",
-            "title": "Inspired by nature – Forged by hand.",
-            "mobile_text_position": "place-self-end-start text-start",
-            "desktop_text_position": "sm:place-self-end-start sm:text-start",
+            "image": "shopify:\/\/shop_images\/home.jpg",
+            "content_position": "overlay",
+            "subheading": "",
+            "title": "Meet The Founders",
+            "title_2": "Jason & Karen",
+            "content": "",
+            "mobile_text_position": "place-self-center-start text-start",
+            "desktop_text_position": "sm:place-self-center-start sm:text-start",
             "content_max_width": 780,
-            "button_1_text": "Learn more",
-            "button_1_link": "shopify:\/\/collections",
-            "button_1_style": "link",
-            "button_1_background": "#ffffff",
-            "button_1_text_color": "#000000",
+            "button_1_text": "Our Story →",
+            "button_1_link": "shopify:\/\/pages\/our-story",
+            "button_1_style": "solid",
+            "button_1_background": "#ed7325",
+            "button_1_text_color": "#ffffff",
             "button_2_text": "",
             "button_2_link": "",
             "button_2_style": "outline",
@@ -295,44 +400,55 @@
             "gradient_overlay": "linear-gradient(180deg, rgba(54, 54, 54, 0.2), rgba(4, 4, 4, 0.1) 100%)"
           }
         },
-        "image_hKfymM": {
-          "type": "image",
+        "video_EYe4Mq": {
+          "type": "video",
+          "disabled": true,
           "settings": {
-            "image": "shopify:\/\/shop_images\/home.jpg",
-            "subheading": "Tamworth, New England NSW",
-            "title": "Meet the Founders",
-            "mobile_text_position": "place-self-center-start text-start",
-            "desktop_text_position": "sm:place-self-center-start sm:text-start",
+            "video": "shopify:\/\/files\/videos\/AdobeStock_442177005.mp4",
+            "allow_sound": false,
+            "content_position": "overlay",
+            "subheading": "Design to Fab",
+            "title": "Inspired by Nature",
+            "title_2": "Crafted with Soul",
+            "content": "",
+            "mobile_text_position": "place-self-end-start text-start",
+            "desktop_text_position": "sm:place-self-end-start sm:text-start",
             "content_max_width": 780,
-            "button_1_text": "Read More",
-            "button_1_link": "",
-            "button_1_style": "link",
-            "button_1_background": "#ffffff",
-            "button_1_text_color": "#1c1c1c",
+            "button_1_text": "Our Story →",
+            "button_1_link": "shopify:\/\/pages\/our-story",
+            "button_1_style": "solid",
+            "button_1_background": "#ed7325",
+            "button_1_text_color": "#ffffff",
             "button_2_text": "",
             "button_2_link": "",
-            "button_2_style": "solid",
-            "button_2_background": "#1c1c1c",
-            "button_2_text_color": "#ffffff",
+            "button_2_style": "outline",
+            "button_2_background": "#ffffff",
+            "button_2_text_color": "#000000",
             "background": "",
             "background_opacity": 50,
             "text_color": "#ffffff",
             "border_color": "",
-            "gradient_overlay": "linear-gradient(178deg, rgba(0, 0, 0, 0.72) 2%, rgba(0, 0, 0, 0) 15%, rgba(0, 0, 0, 0) 49%)"
+            "gradient_overlay": "linear-gradient(180deg, rgba(54, 54, 54, 0.47) 1%, rgba(4, 4, 4, 0) 99%)"
           }
         }
       },
       "block_order": [
-        "video_PbjWwN",
-        "image_hKfymM"
+        "image_BXp7hy",
+        "video_EYe4Mq"
       ],
+      "name": "Swiper Slideshow (DAC)",
       "settings": {
+        "color_scheme": "",
         "allow_transparent_header": true,
         "show_next_section_button": false,
         "media_size": "auto",
+        "enable_custom_height": true,
+        "container_height_mob": "70",
+        "container_height_desk": "95",
+        "container_width": false,
         "show_initial_transition": false,
-        "autoplay": false,
-        "autoplay_pause_on_video": false,
+        "autoplay": true,
+        "autoplay_pause_on_video": true,
         "cycle_speed": 5,
         "background": "#000000",
         "controls_color": "#ffffff"
@@ -617,8 +733,8 @@
           "type": "button",
           "settings": {
             "style": "solid",
-            "text": "Read More",
-            "url": "",
+            "text": "Read More →",
+            "url": "shopify:\/\/pages\/boutique-markets",
             "background": "",
             "text_color": ""
           }
@@ -636,8 +752,9 @@
       ],
       "name": "t:sections.image_with_text.presets.image_with_text.name",
       "settings": {
-        "color_scheme": "scheme-090efca9-322e-46ea-95a9-3aed0f0e4100",
+        "color_scheme": "scheme-9362f68e-7e7e-4a23-ac40-a5d1adbe3f38",
         "separate_section_with_border": false,
+        "enable_content_center": true,
         "image": "shopify:\/\/shop_images\/imgi_16_Design_to_Fab-Market_pic_1.jpg",
         "reveal_on_scroll": false,
         "image_position": "start",
@@ -658,22 +775,22 @@
         "heading_3PGakq": {
           "type": "heading",
           "settings": {
-            "text": "Boutique Markets",
+            "text": "Retail Stockists",
             "heading_tag": "h1"
           }
         },
         "richtext_xrU4Vy": {
           "type": "richtext",
           "settings": {
-            "content": "<p>You’ll find us regularly showcasing our handcrafted pieces at boutique markets across regional NSW. It’s a chance to connect in person, discover new designs, and take home something truly unique for your home or garden. <br\/><br\/>Come by, say hello, and see the detail that sets our work apart.<\/p>"
+            "content": "<p>Our handcrafted pieces are available through select boutique retailers across NSW. Each stockist is carefully chosen for their shared appreciation of quality design, craftsmanship, and locally made work.<\/p><p>Visit one of our retail partners to experience our collection in person and see the attention to detail that defines every Design to Fab creation.<\/p>"
           }
         },
         "button_n66VJF": {
           "type": "button",
           "settings": {
             "style": "solid",
-            "text": "Read More",
-            "url": "",
+            "text": "Read More →",
+            "url": "shopify:\/\/pages\/retail-stockists",
             "background": "",
             "text_color": ""
           }
@@ -693,7 +810,8 @@
       "settings": {
         "color_scheme": "scheme-090efca9-322e-46ea-95a9-3aed0f0e4100",
         "separate_section_with_border": false,
-        "image": "shopify:\/\/shop_images\/imgi_29_208354372_4275728495844526_539203934782455801_n.jpg",
+        "enable_content_center": true,
+        "image": "shopify:\/\/shop_images\/imgi_1_70630286_136582921023546_2374949384689426312_n_9decfcd2-91bb-491c-9b43-ab5a24d0294a.jpg",
         "reveal_on_scroll": false,
         "image_position": "end",
         "content_width": "sm",
@@ -894,8 +1012,130 @@
         "content": ""
       }
     },
+    "faq_yQxQkJ": {
+      "type": "faq",
+      "blocks": {
+        "question_KABQy8": {
+          "type": "question",
+          "settings": {
+            "question": "<strong>Where are your products made?<\/strong>",
+            "answer": "<p>All of our pieces are designed and handcrafted in New South Wales, Australia. We take pride in using quality materials and supporting local suppliers wherever possible.<\/p>"
+          }
+        },
+        "question_fXrtDd": {
+          "type": "question",
+          "settings": {
+            "question": "<strong>Do you take custom orders?<\/strong>",
+            "answer": "<p>Yes. We can adjust sizes, finishes, or designs to suit your space. Simply get in touch through our contact page to discuss your idea and we’ll guide you through the process.<\/p>"
+          }
+        },
+        "question_Yeq7T8": {
+          "type": "question",
+          "settings": {
+            "question": "<strong>Can I view your work in person?<\/strong>",
+            "answer": "<p>You can visit one of our retail stockists across NSW, or see us at select boutique markets throughout the year. Details are available on our <em>Stockists<\/em> and <em>Markets<\/em> pages.<\/p>"
+          }
+        },
+        "question_tD4tya": {
+          "type": "question",
+          "settings": {
+            "question": "<strong>How long will my order take?<\/strong>",
+            "answer": "<p>As each piece is made to order, please allow around 2–3 weeks for production plus delivery. Custom projects may take a little longer depending on complexity.<\/p>"
+          }
+        },
+        "question_r3jLTN": {
+          "type": "question",
+          "settings": {
+            "question": "<strong>Do you offer shipping across Australia?<\/strong>",
+            "answer": "<p>Yes, we ship Australia-wide. Larger items are sent via courier, while smaller orders are shipped through Australia Post. You’ll receive tracking details once your order is on its way.<\/p>"
+          }
+        },
+        "question_cMcqjc": {
+          "type": "question",
+          "settings": {
+            "question": "<strong>What is weathering steel?<\/strong>",
+            "answer": "<p>Weathering steel naturally forms a rust-like finish when exposed to the elements. It’s designed to self-seal, creating a durable, earthy surface that protects itself and ages beautifully outdoors.<br\/><br\/>Please see <a href=\"\/pages\/product-care\" title=\"Product Care\">Product Care<\/a> for further information<\/p>"
+          }
+        },
+        "question_8B8pLU": {
+          "type": "question",
+          "settings": {
+            "question": "<strong>Will my product arrive already rusted?<\/strong>",
+            "answer": "<p>Some pieces are pre-weathered before shipping, while others begin as raw steel and develop their patina once exposed to moisture. Each piece will naturally find its own character over time.<br\/><br\/>Please see <a href=\"\/pages\/product-care\" title=\"Product Care\">Product Care<\/a> for further information<\/p>"
+          }
+        },
+        "question_Ud3Yrf": {
+          "type": "question",
+          "settings": {
+            "question": "<strong>Do you sell wholesale?<\/strong>",
+            "answer": "<p>We partner with select retailers and galleries who share our values around craftsmanship and design. If you’re interested in stocking our range, please reach out via our <em>Trade Enquiries<\/em> page.<\/p>"
+          }
+        },
+        "question_8CFbhM": {
+          "type": "question",
+          "settings": {
+            "question": "<strong>How should I care for my piece?<\/strong>",
+            "answer": "<p>Wipe gently with a soft, dry cloth. Avoid harsh chemicals or abrasives to preserve the finish. For outdoor pieces, an occasional clean and inspection will help maintain their look over time.<br\/><br\/>Please see <a href=\"\/pages\/product-care\" title=\"Product Care\">Product Care<\/a> for further information<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "question_KABQy8",
+        "question_fXrtDd",
+        "question_Yeq7T8",
+        "question_tD4tya",
+        "question_r3jLTN",
+        "question_cMcqjc",
+        "question_8B8pLU",
+        "question_Ud3Yrf",
+        "question_8CFbhM"
+      ],
+      "name": "t:sections.faq.presets.faq.name",
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": false,
+        "show_categories": false,
+        "subheading": "Need help?",
+        "title": "Frequently Asked Questions",
+        "content": ""
+      }
+    },
+    "1759882148a4f8b7ad": {
+      "type": "apps",
+      "blocks": {
+        "instafeed_app_block_7C7tF3": {
+          "type": "shopify:\/\/apps\/instafeed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "title": "Follow us @designtofab",
+            "title_color": "",
+            "title_size_v2": 0,
+            "alignment": "center",
+            "instafeed_margin_top": 0,
+            "instafeed_margin_bottom": 0,
+            "instafeed_margin_sides": 0,
+            "show_instagram_link": false,
+            "link_alignment": "left",
+            "link_color": "#000000",
+            "background_color": "",
+            "feed_id": "",
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "instafeed_app_block_7C7tF3"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": false,
+        "remove_vertical_spacing": true,
+        "remove_horizontal_spacing": true
+      }
+    },
     "newsletter": {
       "type": "newsletter",
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-090efca9-322e-46ea-95a9-3aed0f0e4100",
         "separate_section_with_border": false,
@@ -911,11 +1151,13 @@
     }
   },
   "order": [
+    "dac_slideshow_swiper_3dUBq7",
     "slideshow",
+    "multiple_media_with_text_cFUNMh",
     "multiple-media-with-text",
     "featured-collections-1",
     "rich-text",
-    "slideshow_qPygRh",
+    "dac_slideshow_swiper_pAiJbE",
     "scrolling-content-1",
     "scrolling-content-2",
     "featured-collections-2",
@@ -929,6 +1171,8 @@
     "media-grid",
     "image-with-text-block",
     "multi-column",
+    "faq_yQxQkJ",
+    "1759882148a4f8b7ad",
     "newsletter"
   ]
 }

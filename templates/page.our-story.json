@@ -1,0 +1,102 @@
+{
+  "sections": {
+    "dac_slideshow_swiper_GQiLmf": {
+      "type": "dac-slideshow-swiper",
+      "blocks": {
+        "image_GfVV9z": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home.jpg",
+            "content_position": "overlay",
+            "subheading": "",
+            "title": "Meet The Founders",
+            "title_2": "Jason & Karen",
+            "content": "",
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_text_position": "sm:place-self-center sm:text-center",
+            "content_max_width": 780,
+            "button_1_text": "",
+            "button_1_link": "",
+            "button_1_style": "solid",
+            "button_1_background": "#ed7325",
+            "button_1_text_color": "#ffffff",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_style": "outline",
+            "button_2_background": "#ffffff",
+            "button_2_text_color": "#000000",
+            "background": "",
+            "background_opacity": 50,
+            "text_color": "#ffffff",
+            "border_color": "",
+            "gradient_overlay": "linear-gradient(180deg, rgba(54, 54, 54, 0.2), rgba(54, 54, 54, 0.45) 54.676%, rgba(4, 4, 4, 0.1) 100%)"
+          }
+        },
+        "video_QyqLpV": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "video": "shopify:\/\/files\/videos\/AdobeStock_442177005.mp4",
+            "allow_sound": false,
+            "content_position": "overlay",
+            "subheading": "Design to Fab",
+            "title": "Inspired by Nature",
+            "title_2": "Crafted with Soul",
+            "content": "",
+            "mobile_text_position": "place-self-end-start text-start",
+            "desktop_text_position": "sm:place-self-end-start sm:text-start",
+            "content_max_width": 780,
+            "button_1_text": "Our Story →",
+            "button_1_link": "shopify:\/\/pages\/our-story",
+            "button_1_style": "solid",
+            "button_1_background": "#ed7325",
+            "button_1_text_color": "#ffffff",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_style": "outline",
+            "button_2_background": "#ffffff",
+            "button_2_text_color": "#000000",
+            "background": "",
+            "background_opacity": 50,
+            "text_color": "#ffffff",
+            "border_color": "",
+            "gradient_overlay": "linear-gradient(180deg, rgba(54, 54, 54, 0.47) 1%, rgba(4, 4, 4, 0) 99%)"
+          }
+        }
+      },
+      "block_order": [
+        "image_GfVV9z",
+        "video_QyqLpV"
+      ],
+      "name": "Swiper Slideshow (DAC)",
+      "settings": {
+        "color_scheme": "",
+        "allow_transparent_header": true,
+        "show_next_section_button": false,
+        "media_size": "auto",
+        "enable_custom_height": true,
+        "container_height_mob": "40",
+        "container_height_desk": "60",
+        "container_width": false,
+        "show_initial_transition": false,
+        "autoplay": true,
+        "autoplay_pause_on_video": true,
+        "cycle_speed": 5,
+        "background": "#000000",
+        "controls_color": "#ffffff"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "color_scheme": "",
+        "show_title": true,
+        "page_width": "xs"
+      }
+    }
+  },
+  "order": [
+    "dac_slideshow_swiper_GQiLmf",
+    "main"
+  ]
+}

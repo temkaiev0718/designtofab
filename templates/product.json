@@ -61,6 +61,18 @@
             "show_below_gallery": false
           }
         },
+        "modal_zBxtM7": {
+          "type": "modal",
+          "settings": {
+            "button_title": "Product Material Important Information",
+            "button_style": "link",
+            "stretch_button": false,
+            "button_background": "",
+            "button_text_color": "",
+            "modal_title": "Product Care",
+            "modal_content": "<p>Weathering steel has a protective layer that will oxidise to a rust-like finish when exposed to weather in most conditions. The product will self-seal to provide durability and corrosion resistance, creating a natural, warm, earthy rustic appearance over time to compliment every home or garden space.<br\/><br\/>Things you should know about your product; <br\/><br\/>We go to great efforts to pre-weather our stock items. On occasions, due to stock availability, items may not be pre-weathered prior to shipping. This also applies to custom orders. Freshly laser cut items will be raw steel (grey metal in colour). Rest assured, the steel will rust when exposed to moisture, that’s what its designed to do. <br\/><\/p><p>Product colour variations happen. This is due to different sourced material, age and stage of natural rusting as well as natural effects during pre-weathering such as falling blossoms or leaves during storms. <br\/><\/p><p>During the early stages of weathering, rust residue may stain surfaces. Remember this during placement of your product. Use a tile or similar on a flat surface to avoid disappointment. Standoffs on a wall for signage are advisable to avoid rust stains venturing down your wall. <br\/><\/p><p>Depending on your climate, your product may benefit from a light mist of water daily, to achieve maximum rusting effect. It will rust quicker in a horizontal position. Leaves or other items resting on the product when it is wet may leave short term marks until the product seals. <br\/><\/p><p>Be patient as the rusting process does take time. It may may take up to 18 months to self-seal, depending on your climate and how often the surface is wet\/dry. <br\/><\/p><p>If you don’t want your product to rust, Penetrol (available from hardware or paint stores) can be applied as a rust preventative every 6 months. This product penetrates the pores of steel and prevents moisture and oxygen from causing rust, it may slow (not stop) the rusting process of weathering steel. <br\/><\/p>"
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -131,6 +143,7 @@
         "separator_REJBGw",
         "text_CPfjz7",
         "description",
+        "modal_zBxtM7",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
@@ -141,7 +154,7 @@
       "settings": {
         "color_scheme": "scheme-1",
         "container_size": "full",
-        "product_info_size": 40,
+        "product_info_size": 45,
         "show_sticky_add_to_cart": true,
         "center_basic_info": false,
         "desktop_media_layout": "grid",
@@ -169,10 +182,106 @@
         "title": "Related products",
         "content": ""
       }
+    },
+    "multiple_media_with_text_UTCdY6": {
+      "type": "multiple-media-with-text",
+      "blocks": {
+        "image_bB8b7G": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/imgi_28_493219723_1218492643612269_1424724961272305666_n.jpg",
+            "rotation": 0
+          }
+        },
+        "image_cGRRwV": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Dachshund_sitting_garden.jpg",
+            "rotation": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_bB8b7G",
+        "image_cGRRwV"
+      ],
+      "custom_css": [
+        ".container {font-size: 18px; padding-top: 4rem; padding-bottom: 4rem; --container-max-width: 65%;}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-9362f68e-7e7e-4a23-ac40-a5d1adbe3f38",
+        "reveal_on_scroll": true,
+        "separate_section_with_border": false,
+        "media_position_desktop": "after_text",
+        "media_position_mobile": "before_text",
+        "media_layout": "overlap",
+        "media_alignment": "end",
+        "media_alignment_offset": 80,
+        "media_mobile_alignment_offset": 40,
+        "text_alignment": "center",
+        "subheading": "Inspired by Nature - Crafted with Soul",
+        "title": "Our Story",
+        "content": "<p>We're Jason and Karen Balsar, the husband-and-wife team who founded Design to Fab in 2018. <br\/><br\/>The company started simply with creating sculptural pieces from found metal objects for our own garden, and quickly became the ideal combination of Karen's artistic vision and Jason's extensive, hands-on knowledge of the metal and manufacturing industry.<\/p>",
+        "button_1_text": "Read more",
+        "button_1_link": "shopify:\/\/pages\/our-story",
+        "button_1_style": "link",
+        "button_2_text": "",
+        "button_2_link": "",
+        "button_2_style": "solid"
+      }
+    },
+    "multiple_media_with_text_Gh3M7h": {
+      "type": "multiple-media-with-text",
+      "blocks": {
+        "image_cNNaxA": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/imgi_16_Design_to_Fab-Market_pic_1_3ff14c99-900a-46d6-9941-88b431bbb082.jpg",
+            "rotation": 0
+          }
+        },
+        "image_hpXnk4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/imgi_47_121146322_1016721858845352_279520353408672517_n.webp",
+            "rotation": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_cNNaxA",
+        "image_hpXnk4"
+      ],
+      "custom_css": [
+        ".container {font-size: 18px; padding-top: 4rem; padding-bottom: 4rem; --container-max-width: 65%;}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "reveal_on_scroll": true,
+        "separate_section_with_border": false,
+        "media_position_desktop": "before_text",
+        "media_position_mobile": "before_text",
+        "media_layout": "overlap",
+        "media_alignment": "end",
+        "media_alignment_offset": 80,
+        "media_mobile_alignment_offset": 40,
+        "text_alignment": "center",
+        "subheading": "",
+        "title": "Boutique Markets & Retail Store Stockists",
+        "content": "<p>You can find our handcrafted designs in select retail stores and boutique markets across New South Wales. Each location has been chosen for its shared appreciation of quality craftsmanship and design. <br\/><br\/>Whether you’re visiting a local gallery or exploring a weekend market, it’s a great way to experience our pieces up close and take home something truly unique.<\/p>",
+        "button_1_text": "Boutique Markets",
+        "button_1_link": "shopify:\/\/pages\/boutique-markets",
+        "button_1_style": "link",
+        "button_2_text": "Retail Stockists",
+        "button_2_link": "shopify:\/\/pages\/retail-stockists",
+        "button_2_style": "link"
+      }
     }
   },
   "order": [
     "main",
-    "related-products"
+    "related-products",
+    "multiple_media_with_text_UTCdY6",
+    "multiple_media_with_text_Gh3M7h"
   ]
 }
