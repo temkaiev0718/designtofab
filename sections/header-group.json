@@ -8,7 +8,7 @@
         "message_GQVDtf": {
           "type": "message",
           "settings": {
-            "text": "Handcrafted Elegance, Made for Your Home"
+            "text": "Inspired by Nature - Crafted with Soul"
           }
         }
       },
@@ -76,13 +76,7 @@
         "mega_menu_BK4MXC",
         "mega_menu_z9xGeB"
       ],
-      "custom_css": [
-        ".header {z-index: 103;}",
-        ".container {--container-max-width: 100%; --container-gutter: 40px;}",
-        ".mega-menu__promo {column-gap: 2px; overflow: hidden;}",
-        ".mega-menu__promo .group {position: relative;}",
-        ".mega-menu__promo .group > .v-stack {position: absolute; inset: 0; padding: 1.5rem; height: 100%; width: 100%; text-align: left; display: flex; flex-direction: column; justify-content: space-between;}"
-      ],
+      "custom_css": [],
       "settings": {
         "color_scheme": "scheme-9362f68e-7e7e-4a23-ac40-a5d1adbe3f38",
         "enable_sticky": true,

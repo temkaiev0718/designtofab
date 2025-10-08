@@ -6,7 +6,7 @@
         "video_i7bp6z": {
           "type": "video",
           "settings": {
-            "video": "shopify:\/\/files\/videos\/AdobeStock_207154656.mp4",
+            "video": "shopify:\/\/files\/videos\/AdobeStock_442177005.mp4",
             "allow_sound": false,
             "subheading": "<strong>Design to Fab<\/strong>",
             "title": "Inspired by Nature - Crafted with Soul",
@@ -137,7 +137,7 @@
         "image-1": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/home.jpg",
+            "image": "shopify:\/\/shop_images\/7C6D0003-72E0-491B-90BB-708B54A8F7A5.jpg",
             "rotation": 0
           }
         }
@@ -146,7 +146,7 @@
         "image-1"
       ],
       "custom_css": [
-        ".container {font-size: 16px; padding-top: 4rem; padding-bottom: 4rem; --container-max-width: 65%;}"
+        ".container {font-size: 18px; padding-top: 4rem; padding-bottom: 4rem; --container-max-width: 65%;}"
       ],
       "settings": {
         "color_scheme": "scheme-9362f68e-7e7e-4a23-ac40-a5d1adbe3f38",
@@ -164,55 +164,6 @@
         "content": "<p>We're Jason and Karen Balsar, the husband-and-wife team who founded Design to Fab in 2018. The company started simply with creating sculptural pieces from found metal objects for our own garden, and quickly became the ideal combination of Karen's artistic vision and Jason's extensive, hands-on knowledge of the metal and manufacturing industry.<\/p>",
         "button_1_text": "Read more",
         "button_1_link": "shopify:\/\/pages\/our-story",
-        "button_1_style": "link",
-        "button_2_text": "",
-        "button_2_link": "",
-        "button_2_style": "solid"
-      }
-    },
-    "multiple_media_with_text_mtKMbr": {
-      "type": "multiple-media-with-text",
-      "blocks": {
-        "image_d7AGHW": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/home.jpg",
-            "rotation": 0
-          }
-        },
-        "image_89M9wX": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "rotation": 0
-          }
-        }
-      },
-      "block_order": [
-        "image_d7AGHW",
-        "image_89M9wX"
-      ],
-      "disabled": true,
-      "custom_css": [
-        ".container {font-size: 16px; padding-top: 4rem; padding-bottom: 4rem; --container-max-width: 65%;}"
-      ],
-      "name": "t:sections.multiple_media_with_text.presets.multiple_media_with_text.name",
-      "settings": {
-        "color_scheme": "scheme-405dc204-4566-4c55-9aa1-97f7891b70ee",
-        "reveal_on_scroll": false,
-        "separate_section_with_border": false,
-        "media_position_desktop": "before_text",
-        "media_position_mobile": "before_text",
-        "media_layout": "overlap",
-        "media_alignment": "center",
-        "media_alignment_offset": 0,
-        "media_mobile_alignment_offset": 0,
-        "text_alignment": "center",
-        "subheading": "About",
-        "title": "Design to Fab",
-        "content": "<p>Inspired by nature. Forged by hand.<\/p><p>We create rustic metal art pieces that bring warmth, texture and storytelling into your home and garden. Each design is laser cut and hand finished in regional NSW – crafted to last, designed to connect.<\/p>",
-        "button_1_text": "Read more",
-        "button_1_link": "",
         "button_1_style": "link",
         "button_2_text": "",
         "button_2_link": "",
@@ -272,7 +223,45 @@
         "products_per_row_desktop": 4,
         "horizontal_spacing_factor": 1.5,
         "vertical_spacing_factor": 1.2,
-        "subheading": ""
+        "subheading": "Shop Popular Products"
+      }
+    },
+    "rich-text": {
+      "type": "rich-text",
+      "blocks": {
+        "heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Our aim: offer beautiful, timeless & functional products",
+            "heading_tag": "h1"
+          }
+        },
+        "link-1": {
+          "type": "link",
+          "settings": {
+            "text": "Our story",
+            "url": ""
+          }
+        },
+        "link-2": {
+          "type": "link",
+          "settings": {
+            "text": "Boutique Markets",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading-1",
+        "link-1",
+        "link-2"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": false,
+        "content_width": "xs",
+        "text_position": "center",
+        "remove_vertical_spacing": false
       }
     },
     "slideshow_qPygRh": {
@@ -340,172 +329,6 @@
       "settings": {
         "allow_transparent_header": true,
         "show_next_section_button": false,
-        "media_size": "fill",
-        "show_initial_transition": false,
-        "autoplay": false,
-        "autoplay_pause_on_video": false,
-        "cycle_speed": 5,
-        "background": "#000000",
-        "controls_color": "#ffffff"
-      }
-    },
-    "images-with-text-scroll": {
-      "type": "images-with-text-scroll",
-      "blocks": {
-        "image-with-text-1": {
-          "type": "image_with_text",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/imgi_20_240679643_950560718826723_5034441740864972688_n.jpg",
-            "subheading": "#1",
-            "title": "The Design",
-            "content": "<p>Each piece is designed with your needs at heart. All products are imagined and developed in our studio, where ideas often stem from the thoughtful feedback we receive throughout the year.<\/p>",
-            "link_text": "Learn more",
-            "link_url": "",
-            "link_style": "link"
-          }
-        },
-        "image-with-text-2": {
-          "type": "image_with_text",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/imgi_20_240679643_950560718826723_5034441740864972688_n.jpg",
-            "subheading": "#2",
-            "title": "Our commitments",
-            "content": "<p>From the very beginning, responsibility has been a core value — both towards you and the environment. From design to distribution, each step is approached with care to create pieces that are timeless, high quality, and fairly priced.<\/p>",
-            "link_text": "Learn more",
-            "link_url": "",
-            "link_style": "link"
-          }
-        },
-        "image_with_text_wiDjnj": {
-          "type": "image_with_text",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/imgi_20_240679643_950560718826723_5034441740864972688_n.jpg",
-            "subheading": "#2",
-            "title": "Our commitments",
-            "content": "<p>From the very beginning, responsibility has been a core value — both towards you and the environment. From design to distribution, each step is approached with care to create pieces that are timeless, high quality, and fairly priced.<\/p>",
-            "link_text": "Learn more",
-            "link_url": "",
-            "link_style": "link"
-          }
-        }
-      },
-      "block_order": [
-        "image-with-text-1",
-        "image-with-text-2",
-        "image_with_text_wiDjnj"
-      ],
-      "settings": {
-        "color_scheme": "scheme-090efca9-322e-46ea-95a9-3aed0f0e4100",
-        "image_position": "start",
-        "text_alignment": "center",
-        "heading_tag": "h3",
-        "overlay_color": "#000000",
-        "overlay_opacity": 20
-      }
-    },
-    "rich-text": {
-      "type": "rich-text",
-      "blocks": {
-        "heading-1": {
-          "type": "heading",
-          "settings": {
-            "text": "Our aim: offer beautiful, timeless & functional products",
-            "heading_tag": "h1"
-          }
-        },
-        "link-1": {
-          "type": "link",
-          "settings": {
-            "text": "Our story",
-            "url": ""
-          }
-        },
-        "link-2": {
-          "type": "link",
-          "settings": {
-            "text": "Boutique Markets",
-            "url": ""
-          }
-        }
-      },
-      "block_order": [
-        "heading-1",
-        "link-1",
-        "link-2"
-      ],
-      "settings": {
-        "color_scheme": "scheme-1",
-        "separate_section_with_border": false,
-        "content_width": "xs",
-        "text_position": "center",
-        "remove_vertical_spacing": false
-      }
-    },
-    "slideshow_74iV3N": {
-      "type": "slideshow",
-      "blocks": {
-        "video_yUJzRz": {
-          "type": "video",
-          "settings": {
-            "video": "shopify:\/\/files\/videos\/AdobeStock_442177005.mp4",
-            "allow_sound": false,
-            "subheading": "<strong>Design to Fab<\/strong>",
-            "title": "The Process",
-            "mobile_text_position": "place-self-end-start text-start",
-            "desktop_text_position": "sm:place-self-end-start sm:text-start",
-            "content_max_width": 780,
-            "button_1_text": "Learn more",
-            "button_1_link": "shopify:\/\/collections",
-            "button_1_style": "link",
-            "button_1_background": "#ffffff",
-            "button_1_text_color": "#000000",
-            "button_2_text": "",
-            "button_2_link": "",
-            "button_2_style": "outline",
-            "button_2_background": "#ffffff",
-            "button_2_text_color": "#000000",
-            "background": "",
-            "background_opacity": 50,
-            "text_color": "#ffffff",
-            "border_color": "",
-            "gradient_overlay": "linear-gradient(180deg, rgba(54, 54, 54, 0.2), rgba(4, 4, 4, 0.1) 100%)"
-          }
-        },
-        "image_nzmACc": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Unknown.jpg",
-            "subheading": "Design to Fab",
-            "title": "The Process",
-            "mobile_text_position": "place-self-center-start text-start",
-            "desktop_text_position": "sm:place-self-center-start sm:text-start",
-            "content_max_width": 780,
-            "button_1_text": "Read More",
-            "button_1_link": "",
-            "button_1_style": "link",
-            "button_1_background": "#ffffff",
-            "button_1_text_color": "#1c1c1c",
-            "button_2_text": "",
-            "button_2_link": "",
-            "button_2_style": "solid",
-            "button_2_background": "#1c1c1c",
-            "button_2_text_color": "#ffffff",
-            "background": "",
-            "background_opacity": 50,
-            "text_color": "#ffffff",
-            "border_color": "",
-            "gradient_overlay": "linear-gradient(178deg, rgba(0, 0, 0, 0.72) 2%, rgba(0, 0, 0, 0) 15%, rgba(0, 0, 0, 0) 49%)"
-          }
-        }
-      },
-      "block_order": [
-        "video_yUJzRz",
-        "image_nzmACc"
-      ],
-      "settings": {
-        "allow_transparent_header": true,
-        "show_next_section_button": false,
         "media_size": "auto",
         "show_initial_transition": false,
         "autoplay": false,
@@ -515,82 +338,34 @@
         "controls_color": "#ffffff"
       }
     },
-    "media-grid": {
-      "type": "media-grid",
+    "scrolling-content-1": {
+      "type": "scrolling-content",
       "blocks": {
-        "image-1": {
-          "type": "image",
+        "text-1": {
+          "type": "text",
           "settings": {
-            "color_scheme": "scheme-4",
-            "image": "shopify:\/\/shop_images\/44.jpg",
-            "column_count": "8",
-            "row_count": 2,
-            "title": "Property Signage",
-            "heading_tag": "h3",
-            "content": "",
-            "link_text": "",
-            "link_url": "",
-            "link_style": "link",
-            "text_position": "place-self-end-start text-start",
-            "overlay_color": "#000000",
-            "overlay_opacity": 6
-          }
-        },
-        "image-2": {
-          "type": "image",
-          "settings": {
-            "color_scheme": "scheme-4",
-            "image": "shopify:\/\/shop_images\/imgi_36_488170987_1196450932483107_1273195842749300193_n.jpg",
-            "column_count": "4",
-            "row_count": 1,
-            "title": "Garden Installations",
-            "heading_tag": "h4",
-            "content": "",
-            "link_text": "",
-            "link_url": "",
-            "link_style": "link",
-            "text_position": "place-self-end-start text-start",
-            "overlay_color": "#000000",
-            "overlay_opacity": 6
-          }
-        },
-        "image-3": {
-          "type": "image",
-          "settings": {
-            "color_scheme": "scheme-4",
-            "image": "shopify:\/\/shop_images\/imgi_40_291880229_1148408262388698_4130066721815348113_n.jpg",
-            "column_count": "4",
-            "row_count": 1,
-            "title": "Nature Inspired",
-            "heading_tag": "h4",
-            "content": "",
-            "link_text": "",
-            "link_url": "",
-            "link_style": "link",
-            "text_position": "place-self-end-start text-start",
-            "overlay_color": "#000000",
-            "overlay_opacity": 6
+            "text": "New: our bag"
           }
         }
       },
       "block_order": [
-        "image-1",
-        "image-2",
-        "image-3"
+        "text-1"
       ],
-      "custom_css": [
-        ".container {font-size: 16px; padding-top: 4rem; padding-bottom: 4rem; --container-max-width: 100%;}"
-      ],
+      "disabled": true,
       "settings": {
-        "color_scheme": "scheme-1",
-        "separate_section_with_border": false,
-        "desktop_row_height": 290,
-        "mobile_row_height": 180,
-        "section_width": "lg",
-        "spacing": "md",
-        "subheading": "",
-        "title": "",
-        "content": ""
+        "separate_section_with_border": true,
+        "scrolling_speed": 0.3,
+        "scroll_direction": "left",
+        "pause_on_hover": false,
+        "text_font": "heading",
+        "text_font_size_mobile": 32,
+        "text_font_size_desktop": 64,
+        "section_vertical_spacing_mobile": 20,
+        "section_vertical_spacing_desktop": 40,
+        "item_horizontal_spacing_mobile": 25,
+        "item_horizontal_spacing_desktop": 50,
+        "background": "",
+        "text_color": "#b3b3b3"
       }
     },
     "scrolling-content-2": {
@@ -613,6 +388,7 @@
         "text-1",
         "text_FPzGRc"
       ],
+      "disabled": true,
       "settings": {
         "separate_section_with_border": false,
         "scrolling_speed": 0.3,
@@ -854,6 +630,10 @@
         "richtext_DBVDGi",
         "button_ghBjg8"
       ],
+      "custom_css": [
+        ".image-with-text {font-size: 16px;}",
+        "@media (max-width: 800px) {.image-with-text {font-size: 15px; }}"
+      ],
       "name": "t:sections.image_with_text.presets.image_with_text.name",
       "settings": {
         "color_scheme": "scheme-090efca9-322e-46ea-95a9-3aed0f0e4100",
@@ -905,6 +685,10 @@
         "richtext_xrU4Vy",
         "button_n66VJF"
       ],
+      "custom_css": [
+        ".image-with-text {font-size: 16px;}",
+        "@media (max-width: 800px) {.image-with-text {font-size: 15px; }}"
+      ],
       "name": "t:sections.image_with_text.presets.image_with_text.name",
       "settings": {
         "color_scheme": "scheme-090efca9-322e-46ea-95a9-3aed0f0e4100",
@@ -918,6 +702,7 @@
     },
     "blog-posts": {
       "type": "blog-posts",
+      "disabled": true,
       "custom_css": [
         ".container {font-size: 16px; padding-top: 4rem; padding-bottom: 4rem; --container-max-width: 100%;}"
       ],
@@ -936,6 +721,85 @@
         "content": "",
         "button_link": "shopify:\/\/blogs\/news",
         "button_text": "Discover all our stories"
+      }
+    },
+    "media-grid": {
+      "type": "media-grid",
+      "blocks": {
+        "image-1": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "scheme-4",
+            "image": "shopify:\/\/shop_images\/44.jpg",
+            "column_count": "8",
+            "row_count": 2,
+            "title": "Property Signage",
+            "heading_tag": "h3",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-end-start text-start",
+            "overlay_color": "#000000",
+            "overlay_opacity": 6
+          }
+        },
+        "image-2": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "scheme-4",
+            "image": "shopify:\/\/shop_images\/imgi_36_488170987_1196450932483107_1273195842749300193_n.jpg",
+            "column_count": "4",
+            "row_count": 1,
+            "title": "Garden Installations",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-end-start text-start",
+            "overlay_color": "#000000",
+            "overlay_opacity": 6
+          }
+        },
+        "image-3": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "scheme-4",
+            "image": "shopify:\/\/shop_images\/imgi_40_291880229_1148408262388698_4130066721815348113_n.jpg",
+            "column_count": "4",
+            "row_count": 1,
+            "title": "Nature Inspired",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-end-start text-start",
+            "overlay_color": "#000000",
+            "overlay_opacity": 6
+          }
+        }
+      },
+      "block_order": [
+        "image-1",
+        "image-2",
+        "image-3"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".container {font-size: 16px; padding-top: 4rem; padding-bottom: 4rem; --container-max-width: 100%;}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": false,
+        "desktop_row_height": 290,
+        "mobile_row_height": 180,
+        "section_width": "lg",
+        "spacing": "md",
+        "subheading": "",
+        "title": "",
+        "content": ""
       }
     },
     "image-with-text-block": {
@@ -974,159 +838,6 @@
         "content_width": "md",
         "enable_parallax": false,
         "remove_vertical_spacing": true
-      }
-    },
-    "testimonials": {
-      "type": "testimonials",
-      "blocks": {
-        "testimonial-1": {
-          "type": "testimonial",
-          "settings": {
-            "content": "<p>Sleek and compact, this piece keeps everything organized with just the right balance of structure and softness.<\/p>",
-            "logo_max_width": 140,
-            "logo_mobile_max_width": 100,
-            "author": ""
-          }
-        },
-        "testimonial-2": {
-          "type": "testimonial",
-          "settings": {
-            "content": "<p>Whether in classic black or a bold tone, it stands out for its smart compartments and refined leather finish.<\/p>",
-            "logo_max_width": 140,
-            "logo_mobile_max_width": 100,
-            "author": ""
-          }
-        },
-        "testimonial-3": {
-          "type": "testimonial",
-          "settings": {
-            "content": "<p>Minimalist design meets everyday function — perfect for keeping your essentials secure and stylish on the go.<\/p>",
-            "logo_max_width": 140,
-            "logo_mobile_max_width": 100,
-            "author": ""
-          }
-        }
-      },
-      "block_order": [
-        "testimonial-1",
-        "testimonial-2",
-        "testimonial-3"
-      ],
-      "disabled": true,
-      "settings": {
-        "color_scheme": "scheme-3",
-        "separate_section_with_border": true,
-        "auto_rotate_between_testimonials": false,
-        "cycle_speed": 5,
-        "font_size_factor": 1,
-        "subheading": "",
-        "title": "",
-        "content": ""
-      }
-    },
-    "timeline": {
-      "type": "timeline",
-      "blocks": {
-        "item-1": {
-          "type": "item",
-          "settings": {
-            "label": "2013",
-            "subheading": "",
-            "title": "A story of shared vision",
-            "content": "<p>This project began with two creative minds, united by both passion and purpose. From day one, the goal was clear: to build something meaningful together. What started as a simple idea turned into a first product launch—and the beginning of a lasting journey.<\/p>",
-            "link_text": "",
-            "link_url": "",
-            "link_style": "link",
-            "mobile_text_color": "#ffffff"
-          }
-        },
-        "item-2": {
-          "type": "item",
-          "settings": {
-            "label": "2014",
-            "subheading": "",
-            "title": "No middlemen",
-            "content": "<p>By working directly with you, we eliminate unnecessary markups and focus on what matters: offering thoughtfully designed, high-quality pieces at a fair price. A modern approach to fashion, rooted in transparency.<\/p>",
-            "link_text": "",
-            "link_url": "",
-            "link_style": "link",
-            "mobile_text_color": "#ffffff"
-          }
-        },
-        "item-3": {
-          "type": "item",
-          "settings": {
-            "label": "2015",
-            "subheading": "",
-            "title": "Crafted in Italy",
-            "content": "<p>Production takes place in a family-run workshop near Naples, known for its artisanal expertise. The collaboration is close and ongoing, with daily conversations shaping both the process and the products. More than just a manufacturer—true partners in craft.<\/p>",
-            "link_text": "",
-            "link_url": "",
-            "link_style": "link",
-            "mobile_text_color": "#ffffff"
-          }
-        },
-        "item-4": {
-          "type": "item",
-          "settings": {
-            "label": "2017",
-            "subheading": "Subheading",
-            "title": "Discover our products",
-            "content": "<p>Located in the heart of the city, our showroom is open throughout the week and offers the ideal place to explore the full range in person.<\/p>",
-            "link_text": "",
-            "link_url": "",
-            "link_style": "link",
-            "mobile_text_color": "#ffffff"
-          }
-        }
-      },
-      "block_order": [
-        "item-1",
-        "item-2",
-        "item-3",
-        "item-4"
-      ],
-      "disabled": true,
-      "settings": {
-        "color_scheme": "scheme-1",
-        "item_color_scheme": "scheme-2",
-        "separate_section_with_border": false
-      }
-    },
-    "image-with-text-overlay-2": {
-      "type": "image-with-text-overlay",
-      "blocks": {
-        "heading-1": {
-          "type": "heading",
-          "settings": {
-            "text": "Our values",
-            "heading_tag": "h3"
-          }
-        },
-        "richtext-1": {
-          "type": "richtext",
-          "settings": {
-            "content": "<p>We aspire to be a brand of the 21st century: 100% online and without any intermediary.<br\/>From you to us directly.<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading-1",
-        "richtext-1"
-      ],
-      "disabled": true,
-      "settings": {
-        "color_scheme": "scheme-4",
-        "image_size": "auto",
-        "image": "shopify:\/\/shop_images\/12P_0996.jpg",
-        "allow_transparent_header": false,
-        "reveal_on_scroll": true,
-        "remove_vertical_spacing": true,
-        "content_width": "xs",
-        "mobile_text_position": "place-self-center text-center",
-        "desktop_text_position": "sm:place-self-center sm:text-center",
-        "overlay_color": "#000000",
-        "overlay_opacity": 30
       }
     },
     "multi-column": {
@@ -1185,215 +896,27 @@
     },
     "newsletter": {
       "type": "newsletter",
-      "disabled": true,
       "settings": {
         "color_scheme": "scheme-090efca9-322e-46ea-95a9-3aed0f0e4100",
         "separate_section_with_border": false,
         "image_size": "md",
+        "image": "shopify:\/\/shop_images\/imgi_36_488170987_1196450932483107_1273195842749300193_n.jpg",
         "subheading": "Keep me updated",
         "title": "Newsletter",
         "content": "<p>Subscribe to get notified about product launches, special offers and company news.<\/p>",
         "button_text": "Subscribe",
         "overlay_color": "#000000",
-        "overlay_opacity": 0
-      }
-    },
-    "dac_slideshow_YAQmzC": {
-      "type": "dac-slideshow-swiper",
-      "blocks": {
-        "image_Nfqajy": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Leila-Desktop_9ef692e9-5255-410b-9ad0-1da5a1b8ea0d.jpg",
-            "mobile_image": "shopify://shop_images/Leila-Desktop.jpg",
-            "content_position": "overlay",
-            "subheading": "",
-            "title": "Leila Jeffreys",
-            "title_2": "Subvert the conventions",
-            "content": "",
-            "mobile_text_position": "place-self-end-start text-start",
-            "desktop_text_position": "sm:place-self-center-start sm:text-start",
-            "content_max_width": 780,
-            "button_1_text": "Case study",
-            "button_1_link": "shopify://blogs/case-studies/leila-jeffreys",
-            "button_1_style": "link",
-            "button_1_background": "#ffffff",
-            "button_1_text_color": "#000000",
-            "button_2_text": "",
-            "button_2_link": "",
-            "button_2_style": "outline",
-            "button_2_background": "#ffffff",
-            "button_2_text_color": "#000000",
-            "background": "",
-            "background_opacity": 50,
-            "text_color": "#ffffff",
-            "border_color": "",
-            "gradient_overlay": "linear-gradient(180deg, rgba(0, 0, 0, 0.35), rgba(4, 4, 4, 0) 35%)"
-          }
-        },
-        "image_GNE6LP": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/MM_Phone_PH-DSP2-02.jpg",
-            "content_position": "overlay",
-            "subheading": "",
-            "title": "Tjanpi Desert Weavers",
-            "title_2": "Celebrating Life, Creativity & Country",
-            "content": "",
-            "mobile_text_position": "place-self-end-start text-start",
-            "desktop_text_position": "sm:place-self-center-start sm:text-start",
-            "content_max_width": 780,
-            "button_1_text": "Case study",
-            "button_1_link": "shopify://blogs/case-studies/tjanpi-desert-weavers",
-            "button_1_style": "link",
-            "button_1_background": "#ffffff",
-            "button_1_text_color": "#000000",
-            "button_2_text": "",
-            "button_2_link": "",
-            "button_2_style": "outline",
-            "button_2_background": "#ffffff",
-            "button_2_text_color": "#000000",
-            "background": "",
-            "background_opacity": 50,
-            "text_color": "#ffffff",
-            "border_color": "",
-            "gradient_overlay": "linear-gradient(81deg, rgba(0, 0, 0, 0.35), rgba(4, 4, 4, 0.1) 33%)"
-          }
-        },
-        "image_CBhEKn": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Life_TopFuel_VIB07109.jpg",
-            "content_position": "overlay",
-            "subheading": "",
-            "title": "Ride Repairs",
-            "title_2": "Care & Craftsmanship",
-            "content": "",
-            "mobile_text_position": "place-self-end-start text-start",
-            "desktop_text_position": "sm:place-self-center-start sm:text-start",
-            "content_max_width": 780,
-            "button_1_text": "Case study",
-            "button_1_link": "shopify://blogs/case-studies/ride-repairs",
-            "button_1_style": "link",
-            "button_1_background": "#ffffff",
-            "button_1_text_color": "#000000",
-            "button_2_text": "",
-            "button_2_link": "",
-            "button_2_style": "outline",
-            "button_2_background": "#ffffff",
-            "button_2_text_color": "#000000",
-            "background": "",
-            "background_opacity": 50,
-            "text_color": "#ffffff",
-            "border_color": "",
-            "gradient_overlay": "linear-gradient(180deg, rgba(19, 19, 19, 0.25) 1%, rgba(4, 4, 4, 0) 44%)"
-          }
-        },
-        "image_KWU8Fq": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/imgi_1_Temple_Installation_at_the_NFSA_credit_gracecostaphotographer-collab_work_with_Melvin_J._Montalban_2_copy.jpg",
-            "content_position": "overlay",
-            "subheading": "",
-            "title": "Leila Jeffreys",
-            "title_2": "Subvert the conventions of portraiture.",
-            "content": "",
-            "mobile_text_position": "place-self-end-start text-start",
-            "desktop_text_position": "sm:place-self-center-start sm:text-start",
-            "content_max_width": 780,
-            "button_1_text": "Case study",
-            "button_1_link": "shopify://blogs/case-studies/leila-jeffries",
-            "button_1_style": "link",
-            "button_1_background": "#ffffff",
-            "button_1_text_color": "#000000",
-            "button_2_text": "",
-            "button_2_link": "",
-            "button_2_style": "outline",
-            "button_2_background": "#ffffff",
-            "button_2_text_color": "#000000",
-            "background": "",
-            "background_opacity": 20,
-            "text_color": "#ffffff",
-            "border_color": "",
-            "gradient_overlay": "linear-gradient(90deg, rgba(0, 0, 0, 0.22), rgba(4, 4, 4, 0) 100%)"
-          }
-        },
-        "image_jyNmWH": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/imgi_3_1_1_47425a28-e5f7-437f-ac98-8231620d4474.jpg",
-            "content_position": "overlay",
-            "subheading": "",
-            "title": "Leila Jeffreys",
-            "title_2": "Subvert the conventions of portraiture.",
-            "content": "",
-            "mobile_text_position": "place-self-end-start text-start",
-            "desktop_text_position": "sm:place-self-center-start sm:text-start",
-            "content_max_width": 780,
-            "button_1_text": "Case study",
-            "button_1_link": "shopify://blogs/case-studies/harley-davidson-newcastle-retail-design",
-            "button_1_style": "link",
-            "button_1_background": "#ffffff",
-            "button_1_text_color": "#000000",
-            "button_2_text": "",
-            "button_2_link": "",
-            "button_2_style": "outline",
-            "button_2_background": "#ffffff",
-            "button_2_text_color": "#000000",
-            "background": "",
-            "background_opacity": 20,
-            "text_color": "#ffffff",
-            "border_color": "",
-            "gradient_overlay": "linear-gradient(90deg, rgba(0, 0, 0, 0.22), rgba(4, 4, 4, 0) 100%)"
-          }
-        }
-      },
-      "block_order": [
-        "image_Nfqajy",
-        "video_xFLVwK",
-        "image_GNE6LP",
-        "image_CBhEKn",
-        "image_KWU8Fq",
-        "image_jyNmWH"
-      ],
-      "custom_css": [
-        ".h1 {font-size: 16px;}",
-        "@media (max-width: 800px) {.h1 {font-size: 14px; } .slideshow__slide-content .prose p.h1 + p.h1 {color: #ffffff; }}",
-        ".slideshow__slide-content .prose p.h1 + p.h1 {color: #fffff;}"
-      ],
-      "name": "Slideshow  Swiper (DAC)",
-      "settings": {
-        "color_scheme": "",
-        "allow_transparent_header": true,
-        "show_next_section_button": false,
-        "media_size": "lg",
-        "enable_custom_height": true,
-        "container_height_mob": "85",
-        "container_height_desk": "98",
-        "container_width": false,
-        "show_initial_transition": false,
-        "autoplay": true,
-        "autoplay_pause_on_video": true,
-        "cycle_speed": 10,
-        "background": "#191919",
-        "controls_color": "#ffffff"
+        "overlay_opacity": 40
       }
     }
   },
   "order": [
     "slideshow",
     "multiple-media-with-text",
-    "multiple_media_with_text_mtKMbr",
     "featured-collections-1",
-    "slideshow_qPygRh",
-    "images-with-text-scroll",
     "rich-text",
-    "slideshow_74iV3N",
-    "media-grid",
+    "slideshow_qPygRh",
+    "scrolling-content-1",
     "scrolling-content-2",
     "featured-collections-2",
     "video",
@@ -1403,12 +926,9 @@
     "image_with_text_9YMTRW",
     "image_with_text_kfAeUp",
     "blog-posts",
+    "media-grid",
     "image-with-text-block",
-    "testimonials",
-    "timeline",
-    "image-with-text-overlay-2",
     "multi-column",
-    "newsletter",
-    "dac_slideshow_YAQmzC"
+    "newsletter"
   ]
 }
